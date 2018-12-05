@@ -1,0 +1,24 @@
+ndis_id: 123456
+name: Bob Jones
+surveys:
+  PhysicalSafety:
+    PhysicalRisk1:
+      - Date: 2018-12-04
+        Level: Low
+        Comments: |
+          Customer lives in a bouncy castle
+      - Date: 2018-12-05
+        Level: Med
+        Comments: |
+          Bouncy castle deflated.
+          Customer still on soft grass
+    PhysicalRisk2:
+      - Date: 2018-12-04
+        Level: 3
+  SubstanceUse:
+    SubstanceRisk2:
+      - Date: 2018-12-05
+        Level: 4
+        Comments: |
+          Disorientated. Lighter found on ground.
+          Possibly the reason why bouncy castle was damaged and deflated

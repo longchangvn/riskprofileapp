@@ -1,0 +1,68 @@
+# This configuration defines the survey categories for risk profiling
+# 
+# Surveys
+#   Risks
+#     Responses
+#     Conditions
+#
+
+
+PhysicalSafety:
+  PhysicalRisk1:
+    - Low
+    - Med
+    - High
+  PhysicalRisk2:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+  PhysicalRisk3:
+    - Yes
+    - No
+
+MedicalHistory:
+  MedicalRisk1:
+    - Low
+    - Med
+    - High
+  MedicalRisk2:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+  MedicalRisk3:
+    - Yes
+    - No
+
+SubstanceUse:
+  SubstanceRisk1:
+    - Low
+    - Med
+    - High
+  SubstanceRisk2:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+  SubstanceRisk3:
+    - Yes
+    - No
+
+Other:
+  OtherRisk1:
+    - Low
+    - Med
+    - High
+  OtherRisk2:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+  OtherRisk3:
+    - Yes
+    - No
