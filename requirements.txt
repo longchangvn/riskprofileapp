@@ -1,4 +1,3 @@
 pyyaml
 flask
-marshmallow
 pprint
