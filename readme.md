@@ -25,6 +25,7 @@ After launching the Flask webserver, connect <http://127.0.0.1:5000>
 ## Endpoints
 ### /surveys
 Returns a list of available surveys.
+
 e.g. <http://127.0.0.1:5000/surveys>
 
 ```python
@@ -33,6 +34,7 @@ e.g. <http://127.0.0.1:5000/surveys>
 
 ### /surveys/<survey_name>
 Returns the set of questions within a given survey.
+
 e.g. <http://127.0.0.1:5000/surveys/MedicalHistory>
 ```python
 {"MedicalRisk1":["Low","Med","High"],"MedicalRisk2":[1,2,3,4,5],"MedicalRisk3":[true,false]}
@@ -40,13 +42,15 @@ e.g. <http://127.0.0.1:5000/surveys/MedicalHistory>
 
 ### /profiles
 A list of profiles found on the local disk (/path/to/project/data/profiles).
+
 e.g. <http://127.0.0.1:5000/profiles>
 ```
 ["123456","984161"]
 ```
 
 ### /profiles/<ndis_id>
-Returns the contents of the selected profile on the local disk (/path/to/project/data/profiles/${ndis_id}).
+Returns the contents of the selected profile on the local disk (/path/to/project/data/profiles/${ndis_id}.yaml)
+
 e.g. <http://127.0.0.1:5000/profiles/123456>
 
 ```python
