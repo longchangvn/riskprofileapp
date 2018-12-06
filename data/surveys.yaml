@@ -14,6 +14,11 @@ Surveys:
     Environment: Risk associated with environment
     Substance: Drug and alcohol risks
     LackOfValue: Risks due to lack of valued role
+  Proposed:
+    Cohort: Is the customer outside the typical customer cohort characteristics?
+    TwoToOneSupport: Does the customer require 2:1 support?
+    SpecialSupport: Does the customer require Special Support Coordination?
+    SpecialBehaviour: Does the customer require Specialist Behavioural Support
   PhysicalSafety:
     PhysicalRisk1: What is your level of XYZ?
     PhysicalRisk2: What is your level of XYZ?
