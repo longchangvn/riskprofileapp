@@ -12,7 +12,11 @@ Run `docker run -p 5000:5000 unboxd_riskeasy`
 
 ## Front end Development server
 
-Run `ng install` to set up npm
+Install [NodeJS](https://nodejs.org/en/) if not already installed.
+
+Change directory to `/path/to/project/frontend/`
+
+Run `npm install` to install required npm packages
 
 Run `ng serve` for a dev server.
 
