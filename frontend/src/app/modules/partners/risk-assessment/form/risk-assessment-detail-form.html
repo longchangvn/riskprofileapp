@@ -1,8 +1,8 @@
 <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
   <div class="row clearfix">
     <div class="col-sm-12 col-md-6 col-lg-6">
-      <label class="form-label">{{"RISK_ASSESSMENT.PAGE.APPLICANT_NAME" | translate}}: </label>
-      <label *ngIf="isEditing" class="form-label">{{customer.first_name}} {{customer.last_name}}</label>
+      <label class="form-label nh-label">{{"RISK_ASSESSMENT.PAGE.APPLICANT_NAME" | translate}}: </label>
+      <label *ngIf="isEditing" class="form-label nh-label">{{customer.first_name}} {{customer.last_name}}</label>
       <div *ngIf="!isEditing" class="row">
 
         <div class="col-6">
@@ -20,7 +20,7 @@
     </div>
 
     <div class="col-sm-12 col-md-6 col-lg-6">
-      <a href="#" (click)="showHistory($event)" class="pull-left">Last Updated: {{customer.last_updated}}</a>
+      <a href="#" (click)="showHistory($event)" class="pull-left mt-10">Last Updated: {{customer.last_updated}}</a>
       <button (click)="showEmailSharing()" type="button" class="btn btn-default pull-right">{{"RISK_ASSESSMENT.PAGE.BUTTON_SHARE" | translate}}</button>
     </div>
   </div>
@@ -38,10 +38,10 @@
   <div class="assessment-wrapper" [ngClass]="{'col-8':isEditing, 'col-12':!isEditing}">
     <div class="row question-header">
       <div class="col-4">
-        {{"RISK_ASSESSMENT.PAGE.QUESTIONS" | translate}}
+        <h4>{{"RISK_ASSESSMENT.PAGE.QUESTIONS" | translate}}</h4>
       </div>
       <div class="assessment-scale col-5">
-        {{"RISK_ASSESSMENT.PAGE.SCALE" | translate}}
+        <h4>{{"RISK_ASSESSMENT.PAGE.SCALE" | translate}}</h4>
         <div class="row">
           <div *ngFor="let s of editingRiskAssessment.scales" class="col-3">
             <!-- {{"RISK_ASSESSMENT.PAGE.NORISK" | translate}} -->
@@ -61,9 +61,10 @@
       </div>
 
       <div class="col-md-3 col-lg-3 col-sm-2">
-        {{"RISK_ASSESSMENT.PAGE.NOTES" | translate}}
+        <h4>{{"RISK_ASSESSMENT.PAGE.NOTES" | translate}}</h4>
       </div>
     </div>
+<hr>
     <div *ngFor="let q of questions" class="row clearfix">
       <div class="col-md-4">
         {{q.questionText}}

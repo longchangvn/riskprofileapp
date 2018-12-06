@@ -37,7 +37,7 @@ const MENUITEMS = [
     children: [
       {
         state: 'list',
-        name: 'CUSTOMER.TITLE'
+        name: 'RISK PROFILES'
       },
     ]
   }

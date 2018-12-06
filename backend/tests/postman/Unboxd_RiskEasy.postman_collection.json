@@ -193,7 +193,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"first_name\": \"Job\",\r\n  \"last_name\": \"Bones\",\r\n  \"ndis_id\": {{new_ndis_id}},\r\n  \"last_updated\": \"2018-12-04 10:12\",\r\n  \"surveys\": {\r\n    \"Qualification\": {\r\n      \"MentalHealth\": [\r\n        {\r\n          \"Notes\": \"None\",\r\n          \"Date\": \"2018-12-04\",\r\n          \"Scale\": \"Low\"\r\n        }\r\n      ],\r\n      \"AccessingServices\": [\r\n        {\r\n          \"Notes\": \"None\",\r\n          \"Date\": \"2018-12-04\",\r\n          \"Scale\": \"Low\"\r\n        }\r\n      ],\r\n      \"Trauma\": [\r\n        {\r\n          \"Notes\": \"None\",\r\n          \"Date\": \"2018-12-04\",\r\n          \"Scale\": \"Low\"\r\n        }\r\n      ],\r\n      \"Violence\": [\r\n        {\r\n          \"Notes\": \"None\",\r\n          \"Date\": \"2018-12-04\",\r\n          \"Scale\": \"Low\"\r\n        }\r\n      ],\r\n      \"Environment\": [\r\n        {\r\n          \"Notes\": \"None\",\r\n          \"Date\": \"2018-12-04\",\r\n          \"Scale\": \"Low\"\r\n        }\r\n      ],\r\n      \"Substance\": [\r\n        {\r\n          \"Notes\": \"None\",\r\n          \"Date\": \"2018-12-04\",\r\n          \"Scale\": \"Low\"\r\n        }\r\n      ],\r\n      \"LackOfValue\": [\r\n        {\r\n          \"Notes\": \"None\",\r\n          \"Date\": \"2018-12-04\",\r\n          \"Scale\": \"Low\"\r\n        }\r\n      ]\r\n    },\r\n    \"MedicalHistory\": {\r\n      \"MedicalRisk1\": [\r\n        {\r\n          \"Date\": \"2018-07-01\",\r\n          \"Scale\": \"High\",\r\n          \"Notes\": \"Severe influenza.\"\r\n        },\r\n        {\r\n          \"Date\": \"2018-08-05\",\r\n          \"Scale\": \"Low\",\r\n          \"Notes\": \"Moderate cold.\"\r\n        }\r\n      ]\r\n    },\r\n    \"PhysicalSafety\": {\r\n      \"PhysicalRisk1\": [\r\n        {\r\n          \"Date\": \"2018-07-01\",\r\n          \"Scale\": \"NoRisk\",\r\n          \"Notes\": \"N/A\\n\"\r\n        },\r\n        {\r\n          \"Date\": \"2018-08-05\",\r\n          \"Scale\": \"Low\",\r\n          \"Notes\": \"House in disrepair\"\r\n        }\r\n      ],\r\n      \"PhysicalRisk2\": [\r\n        {\r\n          \"Date\": \"2018-07-01\",\r\n          \"Scale\": \"Low\"\r\n        }\r\n      ]\r\n    },\r\n    \"SubstanceUse\": {\r\n      \"SubstanceRisk2\": [\r\n        {\r\n          \"Date\": \"2018-08-05\",\r\n          \"Scale\": \"Low\",\r\n          \"Notes\": \"Moderate alcohol consumption\"\r\n        }\r\n      ]\r\n    }\r\n  }\r\n}\r\n"
+					"raw": "{\r\n  \"first_name\": \"Job\",\r\n  \"last_name\": \"Bones\",\r\n  \"ndis_id\": {{new_ndis_id}},\r\n  \"last_updated\": \"2018-12-04 10:12\",\r\n  \"surveys\": {\r\n    \"Qualification\": {\r\n      \"MentalHealth\": [\r\n        {\r\n          \"Notes\": \"None\",\r\n          \"Date\": \"2018-12-04\",\r\n          \"Scale\": \"Low\"\r\n        }\r\n      ],\r\n      \"AccessingServices\": [\r\n        {\r\n          \"Notes\": \"None\",\r\n          \"Date\": \"2018-12-04\",\r\n          \"Scale\": \"Low\"\r\n        }\r\n      ],\r\n      \"Trauma\": [\r\n        {\r\n          \"Notes\": \"None\",\r\n          \"Date\": \"2018-12-04\",\r\n          \"Scale\": \"Low\"\r\n        }\r\n      ],\r\n      \"Violence\": [\r\n        {\r\n          \"Notes\": \"None\",\r\n          \"Date\": \"2018-12-04\",\r\n          \"Scale\": \"Low\"\r\n        }\r\n      ],\r\n      \"Environment\": [\r\n        {\r\n          \"Notes\": \"None\",\r\n          \"Date\": \"2018-12-04\",\r\n          \"Scale\": \"Low\"\r\n        }\r\n      ],\r\n      \"Substance\": [\r\n        {\r\n          \"Notes\": \"None\",\r\n          \"Date\": \"2018-12-04\",\r\n          \"Scale\": \"Low\"\r\n        }\r\n      ],\r\n      \"LackOfValue\": [\r\n        {\r\n          \"Notes\": \"None\",\r\n          \"Date\": \"2018-12-04\",\r\n          \"Scale\": \"Low\"\r\n        }\r\n      ]\r\n    },\r\n    \"MedicalHistory\": {\r\n      \"MedicalRisk1\": [\r\n        {\r\n          \"Date\": \"2018-07-01\",\r\n          \"Scale\": \"High\",\r\n          \"Notes\": \"Severe influenza.\"\r\n        },\r\n        {\r\n          \"Date\": \"2018-08-05\",\r\n          \"Scale\": \"Low\",\r\n          \"Notes\": \"Moderate cold.\"\r\n        }\r\n      ]\r\n    },\r\n    \"PhysicalSafety\": {\r\n      \"PhysicalRisk1\": [\r\n        {\r\n          \"Date\": \"2018-07-01\",\r\n          \"Scale\": \"NoRisk\",\r\n          \"Notes\": \"N/A\"\r\n        },\r\n        {\r\n          \"Date\": \"2018-08-05\",\r\n          \"Scale\": \"Low\",\r\n          \"Notes\": \"House in disrepair\"\r\n        }\r\n      ],\r\n      \"PhysicalRisk2\": [\r\n        {\r\n          \"Date\": \"2018-07-01\",\r\n          \"Scale\": \"Low\"\r\n        }\r\n      ]\r\n    },\r\n    \"SubstanceUse\": {\r\n      \"SubstanceRisk2\": [\r\n        {\r\n          \"Date\": \"2018-08-05\",\r\n          \"Scale\": \"Low\",\r\n          \"Notes\": \"Moderate alcohol consumption\"\r\n        }\r\n      ]\r\n    }\r\n  }\r\n}\r\n"
 				},
 				"url": {
 					"raw": "http://{{host}}:{{port}}/profiles/{{new_ndis_id}}",
@@ -301,7 +301,7 @@
 						"id": "6383a48b-6d4f-44ff-9e37-7921e8e6641c",
 						"exec": [
 							"var moment = require('moment')\r",
-							"pm.environment.set(\"timestamp\", moment().format(\"YYYY-MM-DD hh:mm\"))"
+							"pm.environment.set(\"timestamp\", moment().format(\"YYYY-MM-DD HH:mm\"))"
 						],
 						"type": "text/javascript"
 					}
@@ -392,6 +392,62 @@
 						"profiles",
 						"{{ndis_id}}",
 						"sync"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST notify for profile #123456",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "6383a48b-6d4f-44ff-9e37-7921e8e6641c",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "90f56f14-d2f1-4e5d-9c9b-a5ecc791cb29",
+						"exec": [
+							"pm.test(\"Status code is one of 202, or 501\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([202, 501])\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"profile\": 123456,\n  \"recipients\": [\n      \"david.tout@explorestrategy.com.au\"\n    ],\n  \"custom_message\": \"RiskX changed\"\n}"
+				},
+				"url": {
+					"raw": "http://{{host}}:{{port}}/profiles/{{ndis_id}}/notify",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"profiles",
+						"{{ndis_id}}",
+						"notify"
 					]
 				}
 			},

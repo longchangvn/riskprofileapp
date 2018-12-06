@@ -9,9 +9,9 @@ import logging.config
 import yaml
 import hiyapyco
 from pprint import pprint, pformat
-from flask import Flask, jsonify, request, abort, render_template
+from flask import Flask, jsonify, request, abort, render_template, current_app
 from flask_cors import CORS
-
+from flask_mail import Mail, Message
 
 
 log_format = "%(asctime)s.%(msecs)03d | %(levelname)s | elapsed=%(relativeCreated)d ms loc=%(module)s.%(funcName)s:%(lineno)d\n%(message)s"
@@ -21,9 +21,11 @@ logging.basicConfig(level=logging.DEBUG,
 logger = logging.getLogger('riskeasy')
 
 
-# creating the Flask application w/ CORS enabled
+# creating the Flask application w/ CORS enabled & mail config
 app = Flask(__name__)
+# current_app.config['']
 CORS(app)
+mail = Mail(app)
 
 
 # Flask routes
@@ -70,15 +72,48 @@ def _handle_profile_request(ndis_id):
 
 @app.route('/profiles/<ndis_id>/sync', methods=['POST'])
 def _sync_profile(ndis_id):
-    merge_profile(ndis_id)
+    merge_profile(ndis_id)  # TODO(divv) this needs try/except error handling
     msg = f"Profile for {ndis_id} synced"
     return jsonify(msg)
 
 
+@app.route('/profiles/<ndis_id>/notify', methods=['POST'])
+def _notify_by_email(ndis_id):
+    payload = request.get_json()
+    logger.debug(f"POST received for /profiles/{ndis_id}/notify")
+    logger.debug(f"Request:\n{payload}")
 
-@app.route('/notify', methods=['POST'])
-def _notify_by_email():
-    pass
+    logger.info(f"Fetching customer details for ndis_id={ndis_id}")
+    try:  # TODO(divv) Should find a way to abstract this try/except logic for profile loading
+        profile = load_profile(ndis_id)
+    except FileNotFoundError as e:
+        msg = f"Profile not found ({ndis_id})"
+        return jsonify(msg), 500
+
+    customer_summary = f"{profile['first_name']} {profile['last_name']} (NDIS#: {ndis_id})"
+    logger.info(f"Found customer details: {customer_summary}")
+
+    msg_body = f"Please review the updated customer risk profile for: {customer_summary}.\n"
+    custom_message = profile.get("custom_message")
+    if custom_message:
+        msg_body = msg_body + f"\n{custom_message}\n\n"
+    msg_body = msg_body + f"Synchronise the latest changes using this link:\n"
+    msg_body = msg_body + f"\thttp://127.0.0.1:5000/profiles/{ndis_id}/sync"
+    msg_body = msg_body + f"\nThen review the changes at this link: \n"
+    msg_body = msg_body + f"\thttp://127.0.0.1:5000/profiles/{ndis_id}"
+
+    msg_subject = f"Risk Profile Updated for {customer_summary}"
+    email = Message(msg_subject, sender="noreply@newhorizons.org.au")
+    email.recipients = payload["recipients"]
+    email.body = msg_body
+
+    try:
+        mail.send(email)
+    except Exception as e:
+        msg = f"Unable to send email.\n"
+        msg = msg + f"{e}"
+        return abort(501, msg)
+    return jsonify("Email sent"), 202
 
 
 @app.errorhandler(404)

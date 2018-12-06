@@ -13,10 +13,13 @@
     border-radius: 0;
   }
 }
+
 .configuration.active {
   transform: translate(0, 0);
 }
+
 .configuration-cog {
+  display: none;
   width: 50px;
   height: 50px;
   position: absolute;

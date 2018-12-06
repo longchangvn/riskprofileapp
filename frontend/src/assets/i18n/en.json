@@ -31,7 +31,7 @@
     }
   },
   "CUSTOMER": {
-    "TITLE":"Profiles",
+    "TITLE":"LIST OF APPLICANTS",
     "PAGE": {
       "PDF_POPUP_TITLE":"Convert PDF",
       "EMAIL_POPUP_TITLE":"Email Sharing",

@@ -1,6 +1,8 @@
 /* $sidebar-panel
  ------------------------------------------*/
-.app ng-sidebar > .sidebar-panel.ng-sidebar {
+
+.app ng-sidebar>.sidebar-panel.ng-sidebar {
+  display: none;
   width: $sidebar-width;
   overflow: hidden;
   top: 0;
@@ -29,10 +31,10 @@
     .navigation-item {
       position: relative;
       display: block;
-      &.open > a > .menu-caret {
+      &.open>a>.menu-caret {
         transform: rotate(90deg);
       }
-      &.open > .navigation-submenu {
+      &.open>.navigation-submenu {
         max-height: 1000px;
       }
     }
@@ -106,7 +108,8 @@
         .navigation-link {
           padding-right: 0;
           padding-left: 0;
-          span, .menu-caret {
+          span,
+          .menu-caret {
             display: none;
           }
         }
