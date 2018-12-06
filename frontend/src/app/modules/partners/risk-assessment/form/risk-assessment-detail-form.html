@@ -1,19 +1,41 @@
-<form (ngSubmit)="onSubmit()">
-
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
   <div class="row clearfix">
     <div class="col-sm-12 col-md-6 col-lg-6">
       <label class="form-label">{{"RISK_ASSESSMENT.PAGE.APPLICANT_NAME" | translate}}: </label>
-      <label class="form-label">{{customer.first_name}}</label>
+      <label *ngIf="isEditing" class="form-label">{{customer.first_name}} {{customer.last_name}}</label>
+      <div *ngIf="!isEditing" class="row">
+
+        <div class="col-6">
+          <label class="form-label">{{"CUSTOMER.PAGE.FIRSTNAME" | translate}}: </label>
+          <input *ngIf="!isEditing" type="text" id="first_name" formControlName="first_name" class="form-control" placeholder="{{'CUSTOMER.PAGE.FIRSTNAME' | translate }}"
+          />
+        </div>
+        <div class="col-6">
+          <label class="form-label">{{"CUSTOMER.PAGE.LASTNAME" | translate}}: </label>
+          <input *ngIf="!isEditing" type="text" id="last_name" formControlName="last_name" class="form-control" placeholder="{{'CUSTOMER.PAGE.LASTNAME' | translate }}"
+          />
+        </div>
+
+      </div>
     </div>
 
     <div class="col-sm-12 col-md-6 col-lg-6">
       <a href="#" (click)="showHistory($event)" class="pull-left">Last Updated: {{customer.last_updated}}</a>
-      <button type="button" class="btn btn-default pull-right">{{"RISK_ASSESSMENT.PAGE.BUTTON_SHARE" | translate}}</button>
+      <button (click)="showEmailSharing()" type="button" class="btn btn-default pull-right">{{"RISK_ASSESSMENT.PAGE.BUTTON_SHARE" | translate}}</button>
     </div>
-
   </div>
+  <div class="row clearfix">
+    <div class="col-sm-12 col-md-6 col-lg-6">
+      <label for="ndis_id" class="form-label">{{"RISK_ASSESSMENT.PAGE.NDIS" | translate}}: </label>
+      <label *ngIf="isEditing" class="form-label">{{customer.ndis_id}} </label>
+      <input *ngIf="!isEditing" type="text" id="ndis_id" formControlName="ndis_id" class="validate form-control" placeholder="{{'RISK_ASSESSMENT.PAGE.NDIS' | translate }}"
+      />
+    </div>
+  </div>
+</form>
 
-  <div class="assessment-wrapper">
+<div class="row">
+  <div class="assessment-wrapper" [ngClass]="{'col-8':isEditing, 'col-12':!isEditing}">
     <div class="row question-header">
       <div class="col-4">
         {{"RISK_ASSESSMENT.PAGE.QUESTIONS" | translate}}
@@ -28,33 +50,49 @@
         </div>
 
         <!-- <div class="col-md-1 col-lg-1 col-sm-2">
-            {{"RISK_ASSESSMENT.PAGE.LOWRISK" | translate}}
-        </div>
-        <div class="col-md-1 col-lg-1 col-sm-2">
-            {{"RISK_ASSESSMENT.PAGE.MIDRISK" | translate}}
-        </div>
-        <div class="col-md-1 col-lg-1 col-sm-2">
-            {{"RISK_ASSESSMENT.PAGE.HIRISK" | translate}}
-        </div> -->
+                    {{"RISK_ASSESSMENT.PAGE.LOWRISK" | translate}}
+                </div>
+                <div class="col-md-1 col-lg-1 col-sm-2">
+                    {{"RISK_ASSESSMENT.PAGE.MIDRISK" | translate}}
+                </div>
+                <div class="col-md-1 col-lg-1 col-sm-2">
+                    {{"RISK_ASSESSMENT.PAGE.HIRISK" | translate}}
+                </div> -->
       </div>
 
       <div class="col-md-3 col-lg-3 col-sm-2">
         {{"RISK_ASSESSMENT.PAGE.NOTES" | translate}}
       </div>
     </div>
-    <div *ngFor="let e of editingRiskAssessment.questions" class="row clearfix">
+    <div *ngFor="let q of questions" class="row clearfix">
       <div class="col-md-4">
-        {{e.questionText}}
+        {{q.questionText}}
       </div>
       <div class="assessment-scale col-5">
         <div class="row">
-          <input name="{{e.questionId}}" value="{{s}}" *ngFor="let s of editingRiskAssessment.scales" class="col-3" [(ngModel)]="customer.surveys['Qualification'][e.questionId][0].Scale"
+          <input name="{{q.questionId}}" value="{{s}}" *ngFor="let s of editingRiskAssessment.scales" class="col-3" [(ngModel)]="q.Scale"
             type="radio" />
         </div>
 
       </div>
-      <div class="col-md-3 col-lg-3 col-sm-2"><textarea (change)="updateNote($event, e.questionId)" >{{customer.surveys['Qualification'][e.questionId][0].Notes}}</textarea></div>
+      <div class="col-md-3 col-lg-3 col-sm-2"><textarea (change)="updateNote($event, q)">{{q.Notes}}</textarea></div>
     </div>
   </div>
-</form>
-<button type="button" class="bottom-align" (click)="convertToPDF()">Convert To PDF</button>
+
+
+  <div id="history" *ngIf="isEditing" class="col-4">
+    <span class="history-title">Version Filter by Date</span>
+    <ul class="nav flex-column">
+      <li class="nav-item" *ngFor="let h of customer.surveys[surveyName][questions[0].questionId]">
+        <a class="nav-link" (click)="loadVersionHistory($event, h.Date)" href="#">{{h.Date|date:"MM/dd/yyyy hh:mm:ss"}}</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+<button type="button" class="btn btn-primary bottom-align" (click)="convertToPDF()">Convert To PDF</button>
+
+<popup-component-wrapper [config]="pdfPopConfig" #convertPdf [component]="pdfPopupComponent"></popup-component-wrapper>
+
+<popup-component-wrapper [config]="emailPopConfig" #emailPopup [component]="emailPopupComponent"></popup-component-wrapper>

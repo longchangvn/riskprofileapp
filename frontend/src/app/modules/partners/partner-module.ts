@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 
 import { TranslateModule } from '@ngx-translate/core';
 import { SharedModule } from 'app/shared/shared.module';
-import { ModalModule } from 'ngx-bootstrap';
+import { ModalModule, ProgressbarModule } from 'ngx-bootstrap';
 import { IModule } from 'app/interfaces/imodule';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { PartnerRoutes } from '@app/modules/partners/partner.routing';
@@ -15,6 +15,8 @@ import { CustomerRiskAssessmentWrapperComponent } from '@app/modules/partners/ri
 import { CustomersListComponent } from '@app/modules/partners/list-applicants/list-customers.component';
 import { CustomerService } from '@app/modules/partners/services/customer-service';
 import { RiskAssessmentDetailFormComponent } from '@app/modules/partners/risk-assessment/form/risk-assessment--detail-form';
+import { ConvertPDFPopupComponent } from '@app/modules/partners/risk-assessment/popups/convert-pdf-popup/convert-to-pdf.component';
+import { EmailSharingPopupComponent } from '@app/modules/partners/risk-assessment/popups/share-popup/email-sharing.component';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { RiskAssessmentDetailFormComponent } from '@app/modules/partners/risk-as
         ListCustomerWrapperComponent ,
         CustomersListComponent,
         CustomerRiskAssessmentWrapperComponent ,
-        RiskAssessmentDetailFormComponent
+        RiskAssessmentDetailFormComponent,
+        ConvertPDFPopupComponent,
+        EmailSharingPopupComponent
     ],
     imports: [
         CommonModule,
@@ -32,7 +36,8 @@ import { RiskAssessmentDetailFormComponent } from '@app/modules/partners/risk-as
         RouterModule.forChild(PartnerRoutes),
         TranslateModule.forChild(),
         SharedModule,
-        ModalModule.forRoot()
+        ModalModule.forRoot(),
+        ProgressbarModule
     ],
     providers: [
         CustomerService
@@ -40,7 +45,9 @@ import { RiskAssessmentDetailFormComponent } from '@app/modules/partners/risk-as
     bootstrap: [
         CustomerRiskAssessmentWrapperComponent,
         CustomersListComponent,
-        RiskAssessmentDetailFormComponent
+        RiskAssessmentDetailFormComponent,
+        ConvertPDFPopupComponent,
+        EmailSharingPopupComponent
       ]
 })
 export class PartnerModule implements IModule {

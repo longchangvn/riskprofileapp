@@ -17,15 +17,16 @@
       <div class="modal-body">
         <dynamic-component (componentUpdated)="updateComponent($event)" [componentType]="component"></dynamic-component>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default waves-effect" (click)="cancelHandler()">
+      <div *ngIf="config.showFooter" class="modal-footer">
+        <button *ngIf="config.showClose" type="button" class="btn btn-default waves-effect" (click)="cancelHandler()">
       {{"COMMON.BUTTON.CANCEL" | translate }}
   </button>
-        <button type="button" class="btn btn-primary waves-effect" (click)="saveHandler(false)">
+        <button type="button" *ngIf="config.showSaveClose" class="btn btn-primary waves-effect" (click)="saveHandler(false)">
       {{"COMMON.BUTTON.SAVECLOSE" | translate }}
   </button>
 
-        <button *ngIf="config.showSaveNew" type="button" class="btn btn-primary waves-effect" (keypress.enter)="saveHandler(true)" (click)="saveHandler(true)">
+        <button *ngIf="config.showSaveNew" type="button" class="btn btn-primary waves-effect" (keypress.enter)="saveHandler(true)"
+          (click)="saveHandler(true)">
     {{"COMMON.BUTTON.SAVENEW" | translate }}
 </button>
         <button *ngIf="config.showRemove" type="button" class="btn btn-default waves-effect" (click)="deleteHandler()">

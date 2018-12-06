@@ -11,6 +11,7 @@ export class RiskAssessmentQuestion {
   public questionText: string;
   public questionId: string;
   public helpText: string;
-  public value: string;
-  public note: string;
+  public Scale: string;
+  public Notes: string;
+  public Date: string;
 }

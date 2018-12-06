@@ -16,7 +16,7 @@ export const AppRoutes: Routes = [
     component: AdminLayoutComponent,
     children: [
       {
-        path: 'partners',
+        path: 'profiles',
         loadChildren: './modules/partners/partner-module#PartnerModule'
       }
     ]
