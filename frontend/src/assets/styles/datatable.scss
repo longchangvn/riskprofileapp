@@ -1,0 +1,316 @@
+@import '~@swimlane/ngx-datatable/release/index.css';
+@import '~@swimlane/ngx-datatable/release/themes/bootstrap.css';
+@import '~@swimlane/ngx-datatable/release/assets/icons.css';
+@import 'variable.scss';
+.ngx-datatable.bootstrap {
+    font-size: inherit;
+    overflow: visible;
+    &.no-striped {
+        .datatable-body .datatable-body-row {
+            background: none;
+            border-color: rgba($color-border, 0.8);
+            padding: 0;
+            .datatable-body-cell {
+                padding: 0.75rem;
+            }
+        }
+    }
+
+    &.hover {
+        .datatable-body .datatable-body-row:hover {
+            background: rgba($color-bg, 0.9);
+        }
+    }
+
+    .datatable-header {
+        font-weight: 700;
+        .datatable-header-cell.sortable {
+            position: relative;
+        }
+    }
+    
+    .datatable-footer {
+        background: none;
+        color: $color-txt-info;
+        margin: 0;
+        .page-count {
+            font-size: 12px;
+            height: auto;
+            padding: 0;
+        }
+
+        .datatable-pager a {
+            color: $color-txt-info;
+            font-weight: 400;
+        }
+
+        .datatable-pager li.disabled a {
+            color: rgba($color-txt-hint, 0.5);
+        }
+    }
+
+    
+
+    .datatable-body-row {
+        &.row-branch-child {
+            .datatable-body-cell {
+                .col-branch {
+                    position: relative;
+                    padding-left: 20px;
+                    &:before {
+                        position: absolute;
+                        top: -13px;
+                        left: 0;
+                        border-left: 2px dotted $color-warning;
+                        border-bottom: 2px dotted $color-warning;
+                        border-bottom-left-radius: 3px;
+                        display: inline-block;
+                        width: 15px;
+                        height: 24px;
+                        content: "";
+                    }
+                }
+                
+
+            }
+        }
+    }
+
+}
+
+.ngx-datatable.bootstrap .datatable-body .datatable-row-detail {
+    overflow: visible;
+}
+
+.ngx-datatable.bootstrap .datatable-footer .datatable-pager ul li.pages a {
+    padding-top: 0px;
+}
+
+.ngx-datatable.bootstrap .datatable-footer .datatable-pager ul li:not(.disabled).active a, .ngx-datatable.bootstrap .datatable-footer .datatable-pager ul li:not(.disabled):hover a {
+    color: #000;
+    background: none;
+}
+
+.ngx-datatable.bootstrap .datatable-body .datatable-body-row .datatable-body-cell {
+    overflow: visible;
+    .col-more-info {
+        font-size: 12px;
+        color: $color-txt-info;
+        line-height: normal;
+        margin-bottom: 3px;
+        &>span {
+            display: inline-block;
+            padding: 0 7px;
+            border-left: 1px solid $color-border;
+            &:first-child {
+                border-left: none;
+                padding-left: 0;
+            }
+        }
+    }
+}
+
+.ngx-datatable.bootstrap.flex .datatable-body .datatable-body-row .datatable-body-cell, 
+.ngx-datatable.bootstrap.flex .datatable-header .datatable-header-inner .datatable-header-cell {
+    flex: 1 1 0;
+
+    &.col-id {
+        flex: 0 0 90px;
+        max-width: 90px;
+    }
+    &.col-date {
+        flex: 0 0 120px;
+        max-width: 120px;
+    }
+    &.col-status {
+        flex: 0 0 150px;
+        max-width: 150px;
+    }
+    &.col-version {
+        flex: 0 0 80px;
+        max-width: 80px;
+    }
+    &.col-quantity {
+        flex: 0 0 90px;
+        max-width: 90px;
+    }
+    &.col-action {
+        flex: 0 0 180px;
+        max-width: 180px;
+    }
+    &.col-responsible {
+        flex: 0 0 190px;
+        max-width: 190px;
+    }
+    &.col-checkbox {
+        flex: 0 0 50px;
+        max-width: 50px;
+    }
+    &.col-des {
+        flex-grow: 2;
+    }
+    &.col-icon {
+        flex: 0 0 60px;
+        max-width: 60px;
+        .icon {
+            max-width: 28px;
+            border-radius: 1000px;
+        }
+    }
+}
+
+.ngx-datatable.bootstrap.flex .datatable-header .datatable-header-inner .datatable-header-cell {
+    &.col-action {
+        text-align: right;
+    }
+}
+
+.ngx-datatable.bootstrap.flex .datatable-row-center {
+    width: 100%;
+
+}
+
+.ngx-datatable.bootstrap.flex .datatable-body .datatable-scroll {
+    width: 100%;
+}
+
+.ngx-datatable.bootstrap .datatable-body .datatable-row-detail .datatable-body-row {
+    border-top: none;
+    font-size: 12px;
+    a {
+        color: $color-txt;
+    }
+}
+
+.ngx-datatable.datatable-commodity-import .datatable-body .datatable-row-detail .datatable-body-row {
+    font-size: inherit;
+}
+
+
+
+
+.ngx-datatable .datatable-header .datatable-header-cell.sortable .sort-btn {
+    position: relative;
+    margin-left: 15px;
+    top: -2px;
+    
+    &:before, &:after {
+        font-family: "data-table" !important;
+        font-style: normal !important;
+        font-weight: normal !important;
+        font-variant: normal !important;
+        text-transform: none !important;
+        speak: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        color: $color-txt-hint;
+        position: absolute;
+        right: 0;
+    }
+    &:before {
+        content: "\65";
+        top: calc(50% - 9px);
+    }
+    &:after {
+        content: "\66";
+        top: calc(50% - 2px);
+    }
+    &.sort-asc {
+        &:before {
+            color: $color-txt;
+            top: calc(50% - 5px);
+        }
+        &:after {
+            display: none;
+        }
+    }
+    &.sort-desc {
+        &:before {
+            color: $color-txt;
+            top: calc(50% - 5px);
+            content: "\66";
+        }
+        &:after {
+            display: none;
+        }
+    }
+}
+
+.ngx-datatable .datatable-body .empty-row {
+    padding: 10px 0 0;
+    font-style: italic;
+}
+
+
+.datatable-commodity-import {
+    .datatable-body .datatable-body-row .datatable-body-cell {
+        .id {
+            margin-right: 5px;
+            font-size: 13px;
+            color: $color-txt-info;
+        }
+    }
+}
+
+.list-code-set {
+    .item {
+        display: inline-block;
+        padding: 0 5px;
+        background: rgba($color-border, 0.5);
+        border-radius: 3px;
+        margin-right: 3px;
+        margin-bottom: 3px;
+        .action {
+            display: inline-block;
+            padding: 3px 5px;
+            color: $color-danger;
+            cursor: pointer;
+        }
+    }
+}
+
+.ngx-datatable.bootstrap .datatable-body .datatable-body-row {
+    &.table-warning {
+        background-color: rgba($color-warning, 0.2);
+    }
+    &.table-success {
+    }
+    &.table-danger {
+        background-color: rgba($color-danger, 0.1);
+    }
+    &.active {
+        color: $color-txt;
+    }
+}
+
+
+datatable-body > datatable-row-wrapper:nth-of-type(odd) {
+    background-color: #F9F9F9;
+}
+datatable-body:first-of-type > datatable-row-wrapper:first-child {
+    box-shadow: inset 0px 5px 10px -4px rgba(0, 0, 0, 0.1);
+}
+datatable-body > datatable-row-wrapper:nth-of-type(odd) {
+    background-color: #F9F9F9;
+}
+
+.ngx-datatable .datatable-header {
+    overflow: visible !important;
+    position: relative;
+    z-index: 20;
+}
+
+
+.ngx-datatable .datatable-header .datatable-header-cell {
+    overflow: visible;
+}
+.ngx-datatable {
+    overflow: unset !important;
+}
+
+.ngx-datatable.scroll-vertical .datatable-body .datatable-row-wrapper {
+    &:first-child {
+        z-index: 2;
+    }
+}
+

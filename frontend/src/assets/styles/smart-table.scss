@@ -1,0 +1,22 @@
+@import 'variable.scss';
+ng2-smart-table{
+    table{
+        border-color: rgba($color-border, 0.8);;
+        line-height: 1.5em;
+        border-collapse: collapse;
+        border-spacing: 0;
+        display: table;
+        width: 100%;
+        max-width: 100%;
+        overflow: auto;
+        word-break: normal;
+        word-break: keep-all;
+            th{
+                border-bottom: 1px solid;
+            }
+            td{
+                border-bottom: 1px solid  rgba($color-border, 0.8);
+            }
+    }
+}
+

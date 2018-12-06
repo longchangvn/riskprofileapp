@@ -1,0 +1,135 @@
+{
+  "HOME": "Home",
+  "EMAIL": "Email",
+  "EXAMPLE": "Example",
+  "ADMINISTRATION": "Administration",
+  "ROLE": "Role",
+  "USER": "User",
+  "AUDIT LOGS": "Audit Logs",
+  "AUTHENTICATION": "Authentication",
+  "SIGNIN": "Signin",
+  "SIGNUP": "Signup",
+  "FORGOT": "Forgot",
+  "LOCKSCREEN": "Lockscreen",
+  "UNAUTHORIZED": "Unauthorized",
+  "ERROR": "Error",
+  "404": "404",
+  "500": "500",
+  "503": "503",
+  "MANAGEORG": "Organization unit",
+  "CONFIGURATIONS": "Configuration",
+  "AUTHENTICATION_MODULE": {
+    "LOGOUT_MSG": "Sucessfully logged out! ",
+    "GO_HOME": "Take me home!"
+  },
+  "BLANKK": {
+    "PAGE": {
+      "WAREHOUSE": "Warehouse",
+      "GOODSRECEIP": "In stock transaction",
+      "GOODSISSUE": "Out stock transaction",
+      "INQUIRYFORM": "Stock tranferre quest"
+    }
+  },
+  "CUSTOMER": {
+    "MANAGECUSTOMER": "Manage customers",
+    "PAGE": {
+      "ID": "Profile Id",
+      "FIRSTNAME": "First name",
+      "LASTNAME": "Last name",
+      "UPDATED": "Updated",
+      "NDIS": "NDIS"
+    }
+  },
+  "RISK_ASSESSMENT": {
+    "PAGE": {
+      "APPLICANT_NAME": "Applicant name",
+      "BUTTON_SHARE": "Share",
+      "BUTTON_CONVERT_PDF": "Convert To PDF",
+      "QUESTIONS": "Questions",
+      "SCALE": "Scale",
+      "NORISK": "No Risk",
+      "LOWRISK": "Low",
+      "MIDRISK": "Mid",
+      "HIRISK": "High",
+      "NOTES": "Notes"
+    }
+  },
+  "COMMON": {
+    "GENDER": {
+      "MALE": "Male",
+      "FEMALE": "Female",
+      "OTHER": "Other"
+    },
+    "CONTACTADDRESS": {
+      "ADDRESS_LABEL": "Address",
+      "CONTACT_LABEL": "Contact",
+      "FULLNAME_LABEL": "Full name",
+      "LINE1_LABEL": "Line 1",
+      "LINE2_LABEL": "Line 2",
+      "LINE3_LABEL": "Line 3",
+      "LINE4_LABEL": "Line 4",
+      "STATE_LABEL": "State",
+      "CITY_LABEL": "City",
+      "TITILE_LABEL": "Title",
+      "COUNTRY_LABEL": "Country",
+      "CONTACTNUMBER_LABEL": "Contact number",
+      "CONTACTTYPE_LABEL": "Type",
+      "POSTAL_LABEL": "Postal code",
+      "CONTACTNUMBERS": "Contacts",
+      "PHONE_LABEL": "Phone",
+      "EXTENSION_LABEL": "Extension",
+      "EMAIL_LABEL": "Email",
+      "WEBSITE_LABEL": "Website",
+      "MOBILE_LABEL": "Mobile",
+      "LANGUAGE_LABEL": "Language"
+    },
+    "TIMERANGE": {
+      "FROM": "From",
+      "TO": "To"
+    },
+    "GRID": {
+      "ACTION_LABEL": "Action",
+      "VIEW": "View",
+      "EDIT": "EDIT",
+      "DELETE": "Delete",
+      "ACTIVE": "Active"
+    },
+    "LABEL": {
+      "RESULT_FOUND": "Result found: "
+    },
+    "CONFIRM": {
+      "MESSAGE": "Your changes has not been saved, please confirm your action.",
+      "TITLE": "Confirmation",
+      "YES": "Yes",
+      "NO": "No"
+    },
+    "DROPDOWNLIST": {
+      "DEFAULT_OPTION": "Please select value"
+    },
+    "OPERATION": {
+      "SAVESUCCESSFUL": "Saved successfully.",
+      "SAVEFAILED": "Saved failed, please try again later.",
+      "ON_WAREHOUSE_CHANGE": "Your inspection details might be lost when selected warehouse changed",
+      "ON_VALIDATE_PRODUCT_PICKLIST_ERROR": "The inputted quantity is greater than the quantity of inspected products",
+      "ON_VALIDATE_PRODUCT_PICKLIST_WARNING": "The quantity of in-stock product is greater than the quantity of inspected products. Are you sure?"
+    },
+    "BUTTON": {
+      "ADD": "Create new item",
+      "EDIT": "Edit",
+      "DELETE": "Delete",
+      "REMOVE": "Remove",
+      "SAVE": "Save",
+      "SAVECLOSE": "Save & Close",
+      "SAVENEW": "Save & New",
+      "CANCEL": "Cancel",
+      "MOREDETAIL": "More detail"
+    },
+    "MESSAGE": {
+      "UNAUTHORIZED": "Your account is not permitted yet. Please ask your administrator for more detail."
+    },
+    "ERROR": {
+      "REQUIRED": "Please complete this field",
+      "PATTERN": "Please input valid data"
+    }
+  }
+}

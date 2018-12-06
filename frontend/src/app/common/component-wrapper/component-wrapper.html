@@ -1,0 +1,26 @@
+<div class="row clearfix fix-body-height">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div id="componentWrapper" class="card main-content">
+      <div fixheader class="buttons">
+        <button [disabled]="saving" type="button" class="btn btn-default waves-effect" (click)="cancelHandler($event)">
+          {{"COMMON.BUTTON.CANCEL" | translate}}
+        </button>
+        <button [disabled]="!ableToSave" type="submit" class="btn btn-primary waves-effect" (click)="saveHandler($event)">
+          {{"COMMON.BUTTON.SAVE" | translate}}
+        </button>
+        <span *ngIf="formDirty" class="form-dirty">(*)</span>
+      </div>
+
+      <div class="header">
+        <h2>
+          {{ title | translate}}
+        </h2>
+      </div>
+      <div class="body p-2">
+        <dynamic-component (componentUpdated)="updateComponent($event)" [componentType]="component"></dynamic-component>
+      </div>
+    </div>
+  </div>
+</div>
+<confirm-dialog #confirm [DisplayMessage]="'COMMON.CONFIRM.MESSAGE' | translate"></confirm-dialog>
+<toaster-container></toaster-container>

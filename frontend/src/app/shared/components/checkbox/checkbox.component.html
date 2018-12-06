@@ -1,0 +1,6 @@
+<div class="input-group">
+    <span id="{{autoId}}" [ngClass]="{'empty-border':!checked}" btnCheckbox [ngModel]="checked" (ngModelChange)="onChanged($event)">
+        <i [class.btn-primary]="checked" class="btn btn-default" tabindex="0" *ngIf="checked" class="material-icons">check</i>
+    </span>
+    <label style="margin-top:3px; margin-left:5px;">{{displayLabel | translate}}</label>
+</div>

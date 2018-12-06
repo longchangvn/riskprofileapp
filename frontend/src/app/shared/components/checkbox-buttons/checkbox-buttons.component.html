@@ -1,0 +1,11 @@
+<div class="btn-group">
+  <ng-container *ngFor="let key of options">
+    <button type="button" (click)="triggerSearch()"
+      [class.btn-primary]="key.isSelected"
+      [(ngModel)]="key.isSelected"
+      class="btn btn-default"
+      tabindex="0"
+      btnCheckbox
+    >{{ key.label | translate }}</button>
+  </ng-container>
+</div>
