@@ -41,10 +41,10 @@ export class RiskAssessmentDetailFormComponent extends AppComponentBase
     return this.onSubmit();
   }
   validateForm(): Observable<ValidationResultModel> {
-    return of(new ValidationResultModel(this.riskAssessmentForm.valid));
+    return of(new ValidationResultModel(true));
   }
   gotoEdit(itemId: string) {
-    this.router.navigate(['/common/editriskAssessment', itemId]);
+    this.router.navigate(['/partners/risk', itemId]);
   }
   riskAssessmentForm: FormGroup;
   editingRiskAssessment: RiskAssessmentModel = new RiskAssessmentModel();
@@ -57,7 +57,7 @@ export class RiskAssessmentDetailFormComponent extends AppComponentBase
   @ViewChild("confirm") confirmModal: ConfirmComponent;
   createTitle: string;
   editTitle: string;
-  customer: Customer;
+  customer: Customer = new Customer();
   constructor(
     private injector: Injector,
     private route: ActivatedRoute,
@@ -75,9 +75,6 @@ export class RiskAssessmentDetailFormComponent extends AppComponentBase
   }
   buildForm(): FormGroup {
     return this.formBuilder.group({
-      code: [null, [Validators.required, Validators.maxLength(100)]],
-      name: [null, [Validators.required, Validators.maxLength(500)]],
-      dataType: [null, [Validators.required, Validators.maxLength(100)]],
     });
   }
 
@@ -97,6 +94,7 @@ export class RiskAssessmentDetailFormComponent extends AppComponentBase
           Object.keys(result.survey_questions).forEach((key, index) => {
             let q = new RiskAssessmentQuestion();
             q.questionText = result.survey_questions[key];
+            q.questionId = key;
             this.editingRiskAssessment.questions.push(q);
           });
         })
@@ -110,7 +108,9 @@ export class RiskAssessmentDetailFormComponent extends AppComponentBase
       }
     });
   }
-
+  updateNote($event, questionId) {
+    this.customer.surveys['Qualification'][questionId][0].Notes = $event.target.value;
+  }
   redirectToEditPage() {
     this.router.navigate(['/riskAssessment/edit', this.riskAssessmentId]);
   }
@@ -128,12 +128,13 @@ export class RiskAssessmentDetailFormComponent extends AppComponentBase
     return this.customerService.create(model);
   }
   updateRiskAssessment() {
-    let model = Object.assign(this.editingRiskAssessment, this.riskAssessmentForm.value);
-    return this.customerService.update(model);
+    // let model = Object.assign(this.customer, this.riskAssessmentForm.value);
+    console.log(this.customer);
+    return this.customerService.update(this.customer);
   }
 
   cancel() {
-    this.router.navigate(['/common/riskAssessment'])
+    this.router.navigate(['/partners/list'])
   }
 
 }

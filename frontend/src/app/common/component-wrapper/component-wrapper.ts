@@ -56,10 +56,10 @@ export class ComponentWrapper implements AfterViewInit {
                 this.componentRef.instance.save().subscribe(result => {
 
                     this.saving = false;
-                    if (result) {
-                        this.componentRef.instance.pathValue(result)
-                        this.componentRef.instance.gotoEdit(result.itemId);
-                    }
+                    // if (result) {
+                    //     this.componentRef.instance.pathValue(result)
+                    //     this.componentRef.instance.gotoEdit(result.itemId);
+                    // }
                     this.componentRef.instance.getFormGroup().markAsPristine();
 
                     this.translate.get('COMMON.OPERATION.SAVESUCCESSFUL').subscribe(result => {

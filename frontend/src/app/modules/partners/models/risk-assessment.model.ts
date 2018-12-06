@@ -9,6 +9,7 @@ export class RiskAssessmentModel {
 
 export class RiskAssessmentQuestion {
   public questionText: string;
+  public questionId: string;
   public helpText: string;
   public value: string;
   public note: string;
