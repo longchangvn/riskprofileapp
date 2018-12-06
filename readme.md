@@ -334,3 +334,5 @@ Status Code: ```202 ACCEPTED```
   }
   ```
 </details>
+
+If there is no email server available, then the status code will be ```501 Not Implemented```

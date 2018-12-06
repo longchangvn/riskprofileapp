@@ -90,7 +90,7 @@ def _notify_by_email(ndis_id):
         msg = f"Profile not found ({ndis_id})"
         return jsonify(msg), 500
 
-    customer_summary = f"{profile["first_name"]} {profile["last_name"]} (NDIS#: {ndis_id})"
+    customer_summary = f"{profile['first_name']} {profile['last_name']} (NDIS#: {ndis_id})"
     logger.info(f"Found customer details: {customer_summary}")
 
     msg_body = f"Please review the updated customer risk profile for: {customer_summary}.\n"
@@ -107,7 +107,12 @@ def _notify_by_email(ndis_id):
     email.recipients = payload["recipients"]
     email.body = msg_body
 
-    mail.send(email)
+    try:
+        mail.send(email)
+    except Exception as e:
+        msg = f"Unable to send email.\n"
+        msg = msg + f"{e}"
+        return abort(501, msg)
     return jsonify("Email sent"), 202
 
 
