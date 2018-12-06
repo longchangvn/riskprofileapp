@@ -14,7 +14,7 @@ import { of } from 'rxjs/observable/of';
   styleUrls: ['./list-customers.component.scss']
 })
 export class CustomersListComponent extends PagedListingComponentBase<Customer> {
-  title = 'LIST OF APPLICANTS';
+  title = 'CUSTOMER.TITLE';
   currentSelectedCustomers: Customer;
   active = false;
   customers: Customer[];
@@ -41,10 +41,10 @@ export class CustomersListComponent extends PagedListingComponentBase<Customer> 
   protected popupCreate() {
   }
   protected pageEdit(id: any) {
-    this.router.navigate(['/partners/customer/edit', id]);
+    this.router.navigate(['/profiles/risk/', id]);
   }
   protected pageCreate() {
-    this.router.navigateByUrl('/partners/customer/new');
+    this.router.navigateByUrl('/profiles/risk/0');
   }
 
   delete(customer: Customer): void {
@@ -54,6 +54,6 @@ export class CustomersListComponent extends PagedListingComponentBase<Customer> 
   }
 
   onSelect({selected}) {
-    this.router.navigateByUrl('/partners/risk/' + selected[0].ndis_id);
+    this.router.navigateByUrl('/profiles/risk/' + selected[0].ndis_id);
   }
 }

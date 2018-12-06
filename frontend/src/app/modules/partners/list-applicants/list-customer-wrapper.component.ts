@@ -4,7 +4,7 @@ import { CustomersListComponent } from "@app/modules/partners/list-applicants/li
 
 @Component({
     selector: "list-people",
-    template: '<list-component-wrapper [canSearch]="false" [canAdd]="false" [component]="formComponent"></list-component-wrapper>'
+    template: '<list-component-wrapper [canSearch]="false" [component]="formComponent"></list-component-wrapper>'
 
 })
 export class ListCustomerWrapperComponent {

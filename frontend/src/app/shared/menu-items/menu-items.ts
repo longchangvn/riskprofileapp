@@ -29,7 +29,7 @@ export interface Menu {
 const MENUITEMS = [
    
   {
-    state: 'partners',
+    state: 'profiles',
     name: 'APPLICANTS',
     
     type: 'sub',

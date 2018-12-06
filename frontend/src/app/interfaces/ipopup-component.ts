@@ -10,5 +10,4 @@ export interface IPopupComponentWrapper {
     popupCancel();
     showCreatePopup(param:any);
     showEditPopup(item:any);
-    events:any[];
 }

@@ -1,4 +1,4 @@
-import { Injectable, Optional, Inject } from '@angular/core';
+import { Injectable, Optional, Inject, EventEmitter } from '@angular/core';
 import { BaseService, System_Configure } from '@app/shared/service';
 import { IPagingService } from '@app/shared/IPagingService';
 import { Customer } from '../models/customer.model';
@@ -12,6 +12,8 @@ import { of } from 'rxjs/observable/of';
 @Injectable()
 export class CustomerService extends BaseService implements IPagingService<Customer> {
     url: string;
+    pdfDownloaded: EventEmitter<any> = new EventEmitter<any>();
+    emailClosed: EventEmitter<any> = new EventEmitter<any>();
     constructor(protected http: HttpClient, @Optional() @Inject(System_Configure) config?: SystemConfiguration, ) {
         super(http, config);
         this.url = '/profiles';
@@ -66,4 +68,11 @@ export class CustomerService extends BaseService implements IPagingService<Custo
         return this.get(`/surveys/${surveyName}`);
     }
 
+    finishedDownloadPdf() {
+        this.pdfDownloaded.emit();
+    }
+
+    closeEmailPopup() {
+        this.emailClosed.emit();
+    }
 }
