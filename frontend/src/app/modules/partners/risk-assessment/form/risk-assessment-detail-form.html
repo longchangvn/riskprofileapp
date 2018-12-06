@@ -1,19 +1,17 @@
 <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
   <div class="row clearfix">
     <div class="col-sm-12 col-md-6 col-lg-6">
-      <label class="form-label nh-label">{{"RISK_ASSESSMENT.PAGE.APPLICANT_NAME" | translate}}: </label>
+      <!-- <label class="form-label nh-label">{{"RISK_ASSESSMENT.PAGE.APPLICANT_NAME" | translate}}: </label> -->
       <label *ngIf="isEditing" class="form-label nh-label">{{customer.first_name}} {{customer.last_name}}</label>
       <div *ngIf="!isEditing" class="row">
 
         <div class="col-6">
           <label class="form-label">{{"CUSTOMER.PAGE.FIRSTNAME" | translate}}: </label>
-          <input *ngIf="!isEditing" type="text" id="first_name" formControlName="first_name" class="form-control" placeholder="{{'CUSTOMER.PAGE.FIRSTNAME' | translate }}"
-          />
+          <input *ngIf="!isEditing" type="text" id="first_name" formControlName="first_name" class="form-control" placeholder="{{'CUSTOMER.PAGE.FIRSTNAME' | translate }}" />
         </div>
         <div class="col-6">
           <label class="form-label">{{"CUSTOMER.PAGE.LASTNAME" | translate}}: </label>
-          <input *ngIf="!isEditing" type="text" id="last_name" formControlName="last_name" class="form-control" placeholder="{{'CUSTOMER.PAGE.LASTNAME' | translate }}"
-          />
+          <input *ngIf="!isEditing" type="text" id="last_name" formControlName="last_name" class="form-control" placeholder="{{'CUSTOMER.PAGE.LASTNAME' | translate }}" />
         </div>
 
       </div>
@@ -21,21 +19,20 @@
 
     <div class="col-sm-12 col-md-6 col-lg-6">
       <a href="#" (click)="showHistory($event)" class="pull-left mt-10">Last Updated: {{customer.last_updated}}</a>
-      <button (click)="showEmailSharing()" type="button" class="btn btn-default pull-right">{{"RISK_ASSESSMENT.PAGE.BUTTON_SHARE" | translate}}</button>
+      <button (click)="showEmailSharing()" type="button" class="btn btn-primary pull-right">{{"RISK_ASSESSMENT.PAGE.BUTTON_SHARE" | translate}}</button>
     </div>
   </div>
   <div class="row clearfix">
-    <div class="col-sm-12 col-md-6 col-lg-6">
+    <div class="col-sm-12 col-md-4 col-lg-3">
       <label for="ndis_id" class="form-label">{{"RISK_ASSESSMENT.PAGE.NDIS" | translate}}: </label>
       <label *ngIf="isEditing" class="form-label">{{customer.ndis_id}} </label>
-      <input *ngIf="!isEditing" type="text" id="ndis_id" formControlName="ndis_id" class="validate form-control" placeholder="{{'RISK_ASSESSMENT.PAGE.NDIS' | translate }}"
-      />
+      <input *ngIf="!isEditing" type="text" id="ndis_id" formControlName="ndis_id" class="validate form-control" placeholder="{{'RISK_ASSESSMENT.PAGE.NDIS' | translate }}" />
     </div>
   </div>
 </form>
 
 <div class="row">
-  <div class="assessment-wrapper" [ngClass]="{'col-8':isEditing, 'col-12':!isEditing}">
+  <div class="assessment-wrapper" [ngClass]="{'col-10':isEditing, 'col-12':!isEditing}">
     <div class="row question-header">
       <div class="col-4">
         <h4>{{"RISK_ASSESSMENT.PAGE.QUESTIONS" | translate}}</h4>
@@ -64,15 +61,14 @@
         <h4>{{"RISK_ASSESSMENT.PAGE.NOTES" | translate}}</h4>
       </div>
     </div>
-<hr>
+    <hr>
     <div *ngFor="let q of questions" class="row clearfix">
       <div class="col-md-4">
         {{q.questionText}}
       </div>
       <div class="assessment-scale col-5">
         <div class="row">
-          <input name="{{q.questionId}}" value="{{s}}" *ngFor="let s of editingRiskAssessment.scales" class="col-3" [(ngModel)]="q.Scale"
-            type="radio" />
+          <input name="{{q.questionId}}" value="{{s}}" *ngFor="let s of editingRiskAssessment.scales" class="col-3" [(ngModel)]="q.Scale" type="radio" />
         </div>
 
       </div>
@@ -81,7 +77,7 @@
   </div>
 
 
-  <div id="history" *ngIf="isEditing" class="col-4">
+  <div id="history" *ngIf="isEditing" class="col-2 mt-20">
     <span class="history-title">Version Filter by Date</span>
     <ul class="nav flex-column">
       <li class="nav-item" *ngFor="let h of customer.surveys[surveyName][questions[0].questionId]">

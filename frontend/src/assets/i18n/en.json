@@ -31,10 +31,10 @@
     }
   },
   "CUSTOMER": {
-    "TITLE":"LIST OF APPLICANTS",
+    "TITLE": "APPLICANTS",
     "PAGE": {
-      "PDF_POPUP_TITLE":"Convert PDF",
-      "EMAIL_POPUP_TITLE":"Email Sharing",
+      "PDF_POPUP_TITLE": "Convert to PDF",
+      "EMAIL_POPUP_TITLE": "Notify others",
       "ID": "Profile Id",
       "FIRSTNAME": "First name",
       "LASTNAME": "Last name",
@@ -46,7 +46,7 @@
     "PAGE": {
       "APPLICANT_NAME": "Applicant name",
       "BUTTON_SHARE": "Share",
-      "BUTTON_CONVERT_PDF": "Convert To PDF",
+      "BUTTON_CONVERT_PDF": "Convert to PDF",
       "QUESTIONS": "Questions",
       "SCALE": "Scale",
       "NORISK": "No Risk",
@@ -54,7 +54,7 @@
       "MIDRISK": "Mid",
       "HIRISK": "High",
       "NOTES": "Notes",
-      "NDIS":"NDIS"
+      "NDIS": "NDIS"
     }
   },
   "COMMON": {
