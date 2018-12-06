@@ -14,9 +14,9 @@
         <button [disabled]="!ableToSave" type="submit" class="btn btn-primary waves-effect  pull-left" (click)="saveHandler($event)">
               {{"COMMON.BUTTON.SAVE" | translate}}
             </button>
-        <button [disabled]="saving" type="button" class="btn btn-default waves-effect pull-right" (click)="cancelHandler($event)">
+        <!-- <button [disabled]="saving" type="button" class="btn btn-default waves-effect pull-right" (click)="cancelHandler($event)">
             {{"COMMON.BUTTON.CANCEL" | translate}}
-          </button>
+          </button> -->
         <span *ngIf="formDirty" class="form-dirty">(*)</span>
       </div>
 
