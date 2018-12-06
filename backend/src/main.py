@@ -39,7 +39,7 @@ def _get_surveys():
 
 @app.route('/surveys/<survey_name>', methods=['GET'])
 def _get_survey_by_name(survey_name):
-    return jsonify(SURVEYS[survey_name])
+    return jsonify(survey_questions=SURVEYS[survey_name], scales=SCALES, survey_name=survey_name)
 
 
 @app.route('/profiles', methods=['GET'])
@@ -73,6 +73,12 @@ def _sync_profile(ndis_id):
     merge_profile(ndis_id)
     msg = f"Profile for {ndis_id} synced"
     return jsonify(msg)
+
+
+
+@app.route('/notify', methods=['POST'])
+def _notify_by_email():
+    pass
 
 
 @app.errorhandler(404)
@@ -117,8 +123,6 @@ def get_local_profile_list():
                     "ndis_id": profile["ndis_id"],
                 })
     return response
-
-
 
 
 def load_profile(ndis_id):
