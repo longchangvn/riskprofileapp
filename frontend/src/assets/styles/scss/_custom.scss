@@ -1,0 +1,42 @@
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: "liga" on;
+
+}
+
+.home {
+  background-color: $purple;
+}
+
+.document {
+  font-family: Georgia, Times New Roman, serif;
+  font-size: 17px;
+  color: rgba(0,0,0,.84);
+  .card-header {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 21px;
+    font-weight: normal;
+    text-transform: capitalize;
+  }
+}
+
+.app ng-sidebar > .sidebar-panel.ng-sidebar .menu .navigation-submenu .navigation-submenu a {
+  padding-left: 5.5rem;
+}
+
+.btn-outline-danger {
+  color: $red !important;
+  &:hover {
+    color: #fff !important;
+  }
+}
+
+.help-block {
+  color: $red !important;
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid $red !important;
+}

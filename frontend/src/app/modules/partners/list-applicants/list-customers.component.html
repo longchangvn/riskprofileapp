@@ -1,0 +1,54 @@
+<ngx-datatable #myTable class="bootstrap hover no-striped flex" [columnMode]="'flex'" [footerHeight]="60" [headerHeight]="40"
+  [rowHeight]="'auto'" [externalPaging]="true" [externalSorting]="true" [rows]="customers" 
+  (sort)="onSort($event)" [messages]="{emptyMessage: NO_DATA_DISPLAYED_MESSAGE}" 
+  [sorts]="sortElement" [offset]="pagingModel.pageIndex"
+  (select)='onSelect($event)'
+  [selectionType]="'single'"
+  [limit]="pagingModel.pageSize" [count]="pagingModel.totalCount">
+
+ 
+  <ngx-datatable-column name="{{ 'CUSTOMER.PAGE.FIRSTNAME' | translate }}">
+    <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+      <div>
+        {{row.first_name}}
+      </div>
+    </ng-template>
+  </ngx-datatable-column>
+
+  <ngx-datatable-column name="{{ 'CUSTOMER.PAGE.LASTNAME' | translate }}">
+    <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+      <div>{{row.last_name}}</div>
+    </ng-template>
+  </ngx-datatable-column>
+
+  <ngx-datatable-column name="{{ 'CUSTOMER.PAGE.UPDATED' | translate }}">
+    <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+      <div>
+        {{row.last_updated}}
+      </div>
+    </ng-template>
+  </ngx-datatable-column>
+
+  <ngx-datatable-column name="{{ 'CUSTOMER.PAGE.NDIS' | translate }}">
+    <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+      <div>
+        {{row.ndis_id}}
+      </div>
+    </ng-template>
+  </ngx-datatable-column>
+
+
+  <ngx-datatable-footer>
+    <ng-template ngx-datatable-footer-template let-rowCount="rowCount" let-pageSize="pageSize" let-selectedCount="selectedCount"
+      let-curPage="curPage" let-offset="offset" let-isVisible="isVisible">
+      <div class="page-count" *ngIf="!footerTemplate">
+        <span>{{ 'COMMON.LABEL.RESULT_FOUND' | translate}} {{rowCount}} </span>
+      </div>
+      <datatable-pager [pagerLeftArrowIcon]="'datatable-icon-left'" [pagerRightArrowIcon]="'datatable-icon-right'" [pagerPreviousIcon]="'datatable-icon-prev'"
+        [pagerNextIcon]="'datatable-icon-skip'" [count]="rowCount" [page]="curPage" [size]="pageSize" [hidden]="!((rowCount / pageSize) > 1)"
+        (change)="myTable.onFooterPage($event)">
+      </datatable-pager>
+    </ng-template>
+  </ngx-datatable-footer>
+
+</ngx-datatable>

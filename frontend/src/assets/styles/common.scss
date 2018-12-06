@@ -1,0 +1,87 @@
+@import 'variable.scss';
+
+.ngx-datatable{
+    // padding: 20px;
+}
+
+input.ng-invalid:not(.ng-untouched)
+, select.ng-invalid:not(.ng-untouched)
+, textarea.ng-invalid:not(.ng-untouched) {
+    border-right: 3px solid #a94442; /* red */
+    // background-color: #A05A19;
+}
+.required {
+    color: $color-danger;
+}
+.btn.btn-primary:disabled {
+    cursor: no-drop;
+}
+
+
+button.btn-remove::after{
+    content: '-'
+}
+
+button.btn-add::after{
+    content: '+'
+}
+
+.stepper .tab-data-error>a{
+    border-top: 3px solid red !important;
+  }
+
+  .fix-body-height{
+      height: 450px;
+  }
+
+body{
+    font-size: 13px;
+    font-family: $font-family;
+    line-height: 1.5;
+    font-weight: 400;
+    color: #666666;
+    // background: linear-gradient(to right bottom, #77717e, #12DEEC);
+}
+.component-title{
+    color: #8f8f8f;
+    font-size: 18px;
+}
+
+
+fieldset.group  { 
+    border: 1px groove #ddd !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin-left: 20px;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+            box-shadow:  0px 0px 0px 0px #000;
+  } 
+  
+  fieldset.group legend { 
+    font-size: 1.2em !important;
+    font-weight: bold !important;
+    text-align: left !important;
+    width:auto;
+    padding:0 10px;
+    border-bottom:none;
+  } 
+  
+  .sticky {
+    position: fixed;
+    top: 10px;
+    left: 290px;
+    width: 100%;
+    z-index: 1000;
+  }
+  .currency:after{
+     content:'VNĐ'; 
+  }
+
+  .success{
+      color:$color-success;
+  }
+  .danger{
+      color: $color_danger;
+  }
+  .warning{
+      color: $color-warning;
+  }

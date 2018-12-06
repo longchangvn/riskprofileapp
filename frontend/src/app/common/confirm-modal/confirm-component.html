@@ -1,0 +1,14 @@
+<ng-template #template>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">{{'COMMON.CONFIRM.TITLE' | translate}}</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+    </div>
+
+    <div class="modal-body text-center">
+        <p>{{DisplayMessage}}</p>
+        <button type="button" class="btn btn-default" (click)="confirm()">{{'COMMON.CONFIRM.YES' | translate}}</button>
+        <button type="button" class="btn btn-primary" (click)="decline()">{{'COMMON.CONFIRM.NO' | translate}}</button>
+    </div>
+</ng-template>

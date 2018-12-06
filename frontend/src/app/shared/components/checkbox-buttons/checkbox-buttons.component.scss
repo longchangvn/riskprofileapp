@@ -1,0 +1,8 @@
+.btn-group {
+    button { 
+        text-transform: capitalize;
+    }
+    button + button {
+        border-left: 1px solid grey;
+    }
+}

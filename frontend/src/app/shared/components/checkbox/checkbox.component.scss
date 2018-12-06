@@ -1,0 +1,19 @@
+i {
+    cursor: pointer;
+    border: 1px solid #ccc;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+}
+.empty-border{
+    border: 1px solid #ccc;
+    // background-color:  #ccc;
+}
+span{
+    position: relative;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+}
