@@ -1,24 +1,21 @@
-ndis_id: 123456
+MedicalHistory:
+  MedicalRisk2:
+  - {Comments: Even worse influenza., Date: '2018-12-09', Level: High}
 name: Bob Jones
+ndis_id: 123456
 surveys:
   PhysicalSafety:
     PhysicalRisk1:
-      - Date: 2018-12-04
-        Level: Low
-        Comments: |
-          Customer lives in a bouncy castle
-      - Date: 2018-12-05
-        Level: Med
-        Comments: |
-          Bouncy castle deflated.
-          Customer still on soft grass
+    - {Comments: Customer lives in a bouncy castle, Date: 'Tue, 04 Dec 2018 00:00:00
+        GMT', Level: Low}
+    - {Comments: 'Bouncy castle deflated.
+
+        Customer still on soft grass', Date: 'Wed, 05 Dec 2018 00:00:00 GMT', Level: Med}
     PhysicalRisk2:
-      - Date: 2018-12-04
-        Level: 3
+    - {Date: 'Tue, 04 Dec 2018 00:00:00 GMT', Level: 3}
   SubstanceUse:
     SubstanceRisk2:
-      - Date: 2018-12-05
-        Level: 4
-        Comments: |
-          Disorientated. Lighter found on ground.
-          Possibly the reason why bouncy castle was damaged and deflated
+    - {Comments: 'Disorientated. Lighter found on ground.
+
+        Possibly the reason why bouncy castle was damaged and deflated', Date: 'Wed,
+        05 Dec 2018 00:00:00 GMT', Level: 4}

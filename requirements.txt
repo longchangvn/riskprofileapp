@@ -1,3 +1,4 @@
-pyyaml
-flask
+ruamel.yaml
+flask==1.0.2
 pprint
+HiYaPyCo==0.4.12

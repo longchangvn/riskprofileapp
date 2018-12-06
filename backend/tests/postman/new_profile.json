@@ -1,0 +1,49 @@
+{
+  "ndis_id": {{new_ndis_id}},
+  "name": "Job Bones",
+  "surveys": {
+    "MedicalHistory": {
+      "MedicalRisk1": [
+        {
+          "Date": "2018-07-01",
+          "Level": "High",
+          "Comments": "Severe influenza.\n"
+        },
+        {
+          "Date": "2018-08-05",
+          "Level": "Low",
+          "Comments": "Moderate cold.\n"
+        }
+      ]
+    },
+    "PhysicalSafety": {
+      "PhysicalRisk1": [
+        {
+          "Date": "2018-07-01",
+          "Level": "None",
+          "Comments": "N/A\n"
+        },
+        {
+          "Date": "2018-08-05",
+          "Level": "Low",
+          "Comments": "House in disrepair\n"
+        }
+      ],
+      "PhysicalRisk2": [
+        {
+          "Date": "2018-07-01",
+          "Level": 2
+        }
+      ]
+    },
+    "SubstanceUse": {
+      "SubstanceRisk2": [
+        {
+          "Date": "2018-08-05",
+          "Level": 2,
+          "Comments": "Moderate alcohol consumption\n"
+        }
+      ]
+    }
+  }
+}
