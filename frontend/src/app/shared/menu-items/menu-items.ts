@@ -37,7 +37,7 @@ const MENUITEMS = [
     children: [
       {
         state: 'list',
-        name: 'RISK PROFILES'
+        name: 'Risk Assessment'
       },
     ]
   }

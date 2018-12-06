@@ -31,7 +31,7 @@
     }
   },
   "CUSTOMER": {
-    "TITLE": "APPLICANTS",
+    "TITLE": "Risk Assessment",
     "PAGE": {
       "PDF_POPUP_TITLE": "Convert to PDF",
       "EMAIL_POPUP_TITLE": "Notify others",
