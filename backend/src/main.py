@@ -9,7 +9,7 @@ import logging.config
 import yaml
 import hiyapyco
 from pprint import pprint, pformat
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, abort, render_template
 
 
 
@@ -22,6 +22,7 @@ logger = logging.getLogger('riskeasy')
 
 # creating the Flask application
 app = Flask(__name__)
+
 
 # Flask routes
 @app.route('/surveys', methods=['GET'])
@@ -50,7 +51,12 @@ def _get_profiles():
 @app.route('/profiles/<ndis_id>', methods=['GET', 'PUT'])
 def _handle_profile_request(ndis_id):
     if request.method == 'GET':
-        return jsonify(load_profile(ndis_id))
+        try:
+            profile = load_profile(ndis_id)
+            return jsonify(profile)
+        except FileNotFoundError as e:
+            abort(404, f"Profile: {ndis_id} not found.")
+
     elif request.method == 'PUT':
         payload = request.get_json()
         logger.debug(f"PUT received for /profiles/{ndis_id}")
@@ -65,6 +71,11 @@ def _sync_profile(ndis_id):
     merge_profile(ndis_id)
     msg = f"Profile for {ndis_id} synced"
     return jsonify(msg)
+
+
+@app.errorhandler(404)
+def _page_not_found(e):
+    return render_template('404.html', error_val=e), 404
 
 
 # Utilities

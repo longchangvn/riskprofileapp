@@ -15,4 +15,4 @@ surveys:
         Possibly the reason why bouncy castle was damaged and deflated', Date: '2018-12-05', Level: 4}
   MedicalHistory:
     MedicalRisk2:
-    - {Comments: Even worse influenza., Date: '2018-12-09', Level: High}
+    - {Comments: Bad influenza., Date: '2018-12-09', Level: High}

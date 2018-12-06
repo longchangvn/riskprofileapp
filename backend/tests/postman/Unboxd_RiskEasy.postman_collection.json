@@ -7,6 +7,20 @@
 	"item": [
 		{
 			"name": "GET surveys",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e96ae9a0-a6b5-44f8-a51d-af08c2b7e1bf",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -30,6 +44,20 @@
 		},
 		{
 			"name": "GET surveys by name",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "35a78410-603e-478b-bab2-a113f45fd0c8",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -54,6 +82,20 @@
 		},
 		{
 			"name": "GET profiles",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "88bf87cc-354e-4195-a192-74714cf918a3",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -77,6 +119,20 @@
 		},
 		{
 			"name": "GET profile by ndis_id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fe14eef6-2651-4a6b-ba79-2a931d4e15f5",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -111,6 +167,18 @@
 						],
 						"type": "text/javascript"
 					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "950704c9-8d19-4dc8-9090-55c1d18241a8",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
 				}
 			],
 			"request": {
@@ -125,7 +193,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"ndis_id\": {{new_ndis_id}},\r\n  \"name\": \"Job Bones\",\r\n  \"surveys\": {\r\n    \"MedicalHistory\": {\r\n      \"MedicalRisk1\": [\r\n        {\r\n          \"Date\": \"2018-07-01\",\r\n          \"Level\": \"High\",\r\n          \"Comments\": \"Severe influenza.\\n\"\r\n        },\r\n        {\r\n          \"Date\": \"2018-08-05\",\r\n          \"Level\": \"Low\",\r\n          \"Comments\": \"Moderate cold.\\n\"\r\n        }\r\n      ]\r\n    },\r\n    \"PhysicalSafety\": {\r\n      \"PhysicalRisk1\": [\r\n        {\r\n          \"Date\": \"2018-07-01\",\r\n          \"Level\": \"None\",\r\n          \"Comments\": \"N/A\\n\"\r\n        },\r\n        {\r\n          \"Date\": \"2018-08-05\",\r\n          \"Level\": \"Low\",\r\n          \"Comments\": \"House in disrepair\\n\"\r\n        }\r\n      ],\r\n      \"PhysicalRisk2\": [\r\n        {\r\n          \"Date\": \"2018-07-01\",\r\n          \"Level\": 2\r\n        }\r\n      ]\r\n    },\r\n    \"SubstanceUse\": {\r\n      \"SubstanceRisk2\": [\r\n        {\r\n          \"Date\": \"2018-08-05\",\r\n          \"Level\": 2,\r\n          \"Comments\": \"Moderate alcohol consumption\\n\"\r\n        }\r\n      ]\r\n    }\r\n  }\r\n}"
+					"raw": "{\r\n  \"ndis_id\": {{new_ndis_id}},\r\n  \"name\": \"Job Bones\",\r\n  \"surveys\": {\r\n    \"MedicalHistory\": {\r\n      \"MedicalRisk1\": [\r\n        {\r\n          \"Date\": \"2018-07-01\",\r\n          \"Level\": \"High\",\r\n          \"Comments\": \"Severe influenza.\\n\"\r\n        },\r\n        {\r\n          \"Date\": \"2018-08-05\",\r\n          \"Level\": \"Low\",\r\n          \"Comments\": \"Moderate cold.\\n\"\r\n        }\r\n      ]\r\n    },\r\n    \"PhysicalSafety\": {\r\n      \"PhysicalRisk1\": [\r\n        {\r\n          \"Date\": \"2018-07-01\",\r\n          \"Level\": \"None\",\r\n          \"Comments\": \"N/A\\n\"\r\n        },\r\n        {\r\n          \"Date\": \"2018-08-05\",\r\n          \"Level\": \"Low\",\r\n          \"Comments\": \"House in disrepair\\n\"\r\n        }\r\n      ],\r\n      \"PhysicalRisk2\": [\r\n        {\r\n          \"Date\": \"2018-07-01\",\r\n          \"Level\": 2\r\n        }\r\n      ]\r\n    },\r\n    \"SubstanceUse\": {\r\n      \"SubstanceRisk2\": [\r\n        {\r\n          \"Date\": \"2018-08-05\",\r\n          \"Level\": 2,\r\n          \"Comments\": \"Moderate alcohol consumption\\n\"\r\n        }\r\n      ]\r\n    }\r\n  }\r\n}\r\n"
 				},
 				"url": {
 					"raw": "http://{{host}}:{{port}}/profiles/{{new_ndis_id}}",
@@ -143,6 +211,88 @@
 			"response": []
 		},
 		{
+			"name": "GET new profile by ndis_id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fe14eef6-2651-4a6b-ba79-2a931d4e15f5",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Correct ndis_id\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.ndis_id).to.eql(pm.environment.get(\"new_ndis_id\"));\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{host}}:{{port}}/profiles/{{new_ndis_id}}",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"profiles",
+						"{{new_ndis_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET non-existant profile",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fe14eef6-2651-4a6b-ba79-2a931d4e15f5",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{host}}:{{port}}/profiles/999999",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"profiles",
+						"999999"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "PUT update profile #123456",
 			"event": [
 				{
@@ -151,6 +301,18 @@
 						"id": "6383a48b-6d4f-44ff-9e37-7921e8e6641c",
 						"exec": [
 							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "6909fe91-8727-438c-9a68-82d2537732f0",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
 						],
 						"type": "text/javascript"
 					}
@@ -168,7 +330,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{  \r\n  \"ndis_id\": {{ndis_id}},\r\n  \"name\":\"Bob Jones\",\r\n  \"surveys\":{  \r\n    \"PhysicalSafety\":{  \r\n      \"PhysicalRisk1\":[  \r\n        {  \r\n          \"Comments\":\"Customer lives in a bouncy castle\",\r\n          \"Date\":\"Tue, 04 Dec 2018 00:00:00 GMT\",\r\n          \"Level\":\"Low\"\r\n        },\r\n        {  \r\n          \"Comments\":\"Bouncy castle deflated.\\nCustomer still on soft grass\",\r\n          \"Date\":\"Wed, 05 Dec 2018 00:00:00 GMT\",\r\n          \"Level\":\"Med\"\r\n        }\r\n      ],\r\n      \"PhysicalRisk2\":[  \r\n        {  \r\n          \"Date\":\"Tue, 04 Dec 2018 00:00:00 GMT\",\r\n          \"Level\":3\r\n        }\r\n      ]\r\n    },\r\n    \"SubstanceUse\":{  \r\n      \"SubstanceRisk2\":[  \r\n        {  \r\n          \"Comments\":\"Disorientated. Lighter found on ground.\\nPossibly the reason why bouncy castle was damaged and deflated\",\r\n          \"Date\":\"Wed, 05 Dec 2018 00:00:00 GMT\",\r\n          \"Level\":4\r\n        }\r\n      ]\r\n    },\r\n    \"MedicalHistory\": {\r\n      \"MedicalRisk2\": [\r\n        {\r\n          \"Date\": \"2018-12-09\",\r\n          \"Level\": \"High\",\r\n          \"Comments\": \"Even worse influenza.\"\r\n        }\r\n      ]\r\n    }\r\n  }\r\n}\r\n"
+					"raw": "{  \r\n  \"ndis_id\": {{ndis_id}},\r\n  \"name\":\"Bob Jones\",\r\n  \"surveys\": {\r\n    \"PhysicalSafety\": {\r\n      \"PhysicalRisk1\": [\r\n        {\r\n          \"Comments\": \"Customer lives in a bouncy castle\",\r\n          \"Date\": \"2018-12-04\",\r\n          \"Level\": \"Low\"\r\n        },\r\n        {\r\n          \"Comments\": \"Bouncy castle deflated. Customer still on soft grass\",\r\n          \"Date\": \"2018-12-05\",\r\n          \"Level\": \"Med\"\r\n        }\r\n      ],\r\n      \"PhysicalRisk2\": [\r\n        {\r\n          \"Date\": \"2018-12-04\",\r\n          \"Level\": 3\r\n        },\r\n        {\r\n          \"Date\": \"2018-12-06\",\r\n          \"Level\": 4\r\n        }\r\n      ]\r\n    },\r\n    \"SubstanceUse\": {\r\n      \"SubstanceRisk2\": [\r\n        {\r\n          \"Comments\": \"Disorientated. Lighter found on ground. Possibly the reason why bouncy castle was damaged and deflated\",\r\n          \"Date\": \"2018-12-05\",\r\n          \"Level\": 4\r\n        }\r\n      ]\r\n    },\r\n    \"MedicalHistory\": {\r\n      \"MedicalRisk2\": [\r\n        {\r\n          \"Comments\": \"Even worse influenza.\",\r\n          \"Date\": \"2018-12-10\",\r\n          \"Level\": \"High\"\r\n        }\r\n      ]\r\n    }\r\n  }\r\n}"
 				},
 				"url": {
 					"raw": "http://{{host}}:{{port}}/profiles/{{ndis_id}}",
@@ -194,6 +356,18 @@
 						"id": "6383a48b-6d4f-44ff-9e37-7921e8e6641c",
 						"exec": [
 							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "90f56f14-d2f1-4e5d-9c9b-a5ecc791cb29",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
 						],
 						"type": "text/javascript"
 					}
