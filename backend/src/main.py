@@ -223,14 +223,20 @@ def merge_profile(ndis_id):
             f.write(yaml.dump(merged_dict))
         with open(remote_filepath, 'w') as f:
             f.write(yaml.dump(merged_dict))
-
+        
         # cleanup
+        del(remote_yaml)
         del(merged_dict)
         del(merged_hypc)
-        del(local_yaml)
-        del(remote_yaml)
         del(merged_yaml)
-        logger.debug("deleted local, remote, merged dictionaries")
+        logger.debug("deleted remote, merged dictionaries")
+    else:   # This is a new profile that does not yet exist on the remote server
+        with open(remote_filepath, 'w') as f:
+            f.write(local_yaml)
+
+    # cleanup
+    del(local_yaml)
+    logger.debug("deleted local dictionary")
 
 
 def dedupe_list_of_dicts(l):
