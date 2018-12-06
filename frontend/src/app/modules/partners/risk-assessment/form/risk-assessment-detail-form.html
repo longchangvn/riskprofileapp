@@ -1,13 +1,13 @@
 <form (ngSubmit)="onSubmit()">
 
   <div class="row clearfix">
-    <div class="col-sm-12 col-md-6 col-lg-6">
-      <label class="form-label nh-title">{{"RISK_ASSESSMENT.PAGE.APPLICANT_NAME" | translate}}: </label>
-      <label class="form-label">{{customer.first_name}}</label>
+    <div class="col-sm-12 col-md-6 col-lg-8">
+      <label class="form-label nh-label">{{"RISK_ASSESSMENT.PAGE.APPLICANT_NAME" | translate}}: </label>
+      <label class="form-label nh-label">{{customer.first_name}}</label>
     </div>
 
-    <div class="col-sm-12 col-md-6 col-lg-6">
-      <a href="#" (click)="showHistory($event)" class="pull-left">Last Updated: {{customer.last_updated}}</a>
+    <div class="col-sm-12 col-md-6 col-lg-4">
+      <a href="#" (click)="showHistory($event)" class="pull-left mt-10">Last Updated: {{customer.last_updated}}</a>
       <button type="button" class="btn btn-primary waves-effect pull-right">{{"RISK_ASSESSMENT.PAGE.BUTTON_SHARE" | translate}}</button>
     </div>
 
