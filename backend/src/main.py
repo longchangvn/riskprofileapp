@@ -25,7 +25,7 @@ app = Flask(__name__)
 
 # Flask routes
 @app.route('/surveys', methods=['GET'])
-def list_surveys():
+def _get_surveys():
     survey_names = []
     for key in SURVEYS:
         survey_names.append(key)
@@ -35,13 +35,12 @@ def list_surveys():
 
 
 @app.route('/surveys/<survey_name>', methods=['GET'])
-def get_survey_questions(survey_name):
-    # logger.info(f"PhysicalSafety Questions: {get_survey_questions(surveys["PhysicalSafety"])}")
+def _get_survey_by_name(survey_name):
     return jsonify(SURVEYS[survey_name])
 
 
 @app.route('/profiles', methods=['GET'])
-def list_profiles():
+def _get_profiles():
     profiles = get_local_profile_list()
     logger.info(f"{len(profiles)} profiles found locally")
 
@@ -49,7 +48,7 @@ def list_profiles():
 
 
 @app.route('/profiles/<ndis_id>', methods=['GET', 'PUT'])
-def handle_profile(ndis_id):
+def _handle_profile_request(ndis_id):
     if request.method == 'GET':
         return jsonify(load_profile(ndis_id))
     elif request.method == 'PUT':
@@ -62,7 +61,7 @@ def handle_profile(ndis_id):
 
 
 @app.route('/profiles/<ndis_id>/sync', methods=['POST'])
-def sync_profile(ndis_id):
+def _sync_profile(ndis_id):
     merge_profile(ndis_id)
     msg = f"Profile for {ndis_id} synced"
     return jsonify(msg)
@@ -97,7 +96,7 @@ def get_local_profile_list():
 
 def load_profile(ndis_id):
     filename = f"{ndis_id}.yaml"
-    filepath = os.path.join(WORKING_DIR, "profiles", filename)
+    filepath = os.path.join(WORKING_DIR, "profiles", filename)  # TODO(divv) This should dynamically check both local and remote paths
     logger.info(f"Loading profile for: {ndis_id}")
     logger.debug(f"Filepath: {filepath}")
 
@@ -122,7 +121,7 @@ def save_profile(json_payload):
 def merge_profile(ndis_id):
     filename = f"{ndis_id}.yaml"
     local_filepath = os.path.join(WORKING_DIR, "profiles", filename)
-    remote_filepath = os.path.join(WORKING_DIR, "remote", filename)
+    remote_filepath = os.path.join(WORKING_DIR, "remote", filename)     # TODO(divv) This path needs to be configurable
 
     with open(local_filepath, 'r') as f:
         local_yaml = f.read()
