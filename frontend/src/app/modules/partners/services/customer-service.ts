@@ -13,6 +13,7 @@ import { of } from 'rxjs/observable/of';
 export class CustomerService extends BaseService implements IPagingService<Customer> {
     url: string;
     pdfDownloaded: EventEmitter<any> = new EventEmitter<any>();
+    openPdfpopup: EventEmitter<any> = new EventEmitter<any>();
     emailClosed: EventEmitter<any> = new EventEmitter<any>();
     constructor(protected http: HttpClient, @Optional() @Inject(System_Configure) config?: SystemConfiguration, ) {
         super(http, config);
@@ -71,7 +72,9 @@ export class CustomerService extends BaseService implements IPagingService<Custo
     finishedDownloadPdf() {
         this.pdfDownloaded.emit();
     }
-
+    openPDFConvertPopup() {
+        this.openPdfpopup.emit();
+    }
     closeEmailPopup() {
         this.emailClosed.emit();
     }

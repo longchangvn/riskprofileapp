@@ -10,14 +10,17 @@
       <div class="body p-2">
         <dynamic-component (componentUpdated)="updateComponent($event)" [componentType]="component"></dynamic-component>
       </div>
-      <div class="buttons">
-        <button [disabled]="!ableToSave" type="submit" class="btn btn-primary waves-effect  pull-left" (click)="saveHandler($event)">
+      <div class="row buttons justify-content-center align-items-center">
+        <button [disabled]="!ableToSave" type="submit" class="btn btn-primary waves-effect " (click)="saveHandler($event)">
               {{"COMMON.BUTTON.SAVE" | translate}}
             </button>
         <!-- <button [disabled]="saving" type="button" class="btn btn-default waves-effect pull-right" (click)="cancelHandler($event)">
             {{"COMMON.BUTTON.CANCEL" | translate}}
           </button> -->
-        <span *ngIf="formDirty" class="form-dirty">*</span>
+          
+          <button class="btn btn-primary waves-effect" *ngFor="let btn of actionButtons" type="button" (click)="btn.action()">{{btn.displayText|translate}}</button>
+          
+         <span *ngIf="formDirty" class="form-dirty">*</span> 
       </div>
 
     </div>

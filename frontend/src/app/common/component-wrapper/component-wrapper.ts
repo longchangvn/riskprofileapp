@@ -3,6 +3,7 @@ import { ConfirmComponent } from '../confirm-modal/confirm-component';
 import { ICommonComponent } from '@app/interfaces/icommon-componnent';
 import { TranslateService } from '@ngx-translate/core';
 import { NotificationService } from '../notifications/notification-service';
+import { ActionButton } from '@app/common/component-wrapper/action-button.model';
 
 @Component({
     selector: 'component-wrapper',
@@ -12,20 +13,25 @@ import { NotificationService } from '../notifications/notification-service';
 export class ComponentWrapper implements AfterViewInit {
     @ViewChild('confirm') confirm: ConfirmComponent;
     @Input() component: Type<any>;
+    @Input() actionButtons: ActionButton[] = [];
     title = '';
     saving: boolean;
     componentRef: ComponentRef<ICommonComponent>;
-    get ableToSave (): boolean{
+    get ableToSave(): boolean {
         return this.componentRef
-        && this.componentRef.instance.getFormGroup().valid
-        && !this.saving;
+            && this.componentRef.instance.getFormGroup().valid
+            && !this.saving;
     }
     constructor(
         private translate: TranslateService,
         private notify: NotificationService,
         private cdf: ChangeDetectorRef
-    ) { }
-
+    ) { 
+        
+    }
+showAlert(){
+    alert("this is me");
+}
     public get formDirty(): boolean {
         if (!this.componentRef) return false;
         return this.componentRef.instance.getFormGroup().dirty;
@@ -106,7 +112,7 @@ export class ComponentWrapper implements AfterViewInit {
             .subscribe(() => this.confirm.hide());
     }
 
-    addNewHandler($event){
+    addNewHandler($event) {
         const isDirtied = this.componentRef.instance.getFormGroup().dirty;
         if (!isDirtied) {
             this.componentRef.instance.gotoCreate();

@@ -89,7 +89,9 @@ export class RiskAssessmentDetailFormComponent extends AppComponentBase
     this.customerService.pdfDownloaded.subscribe(result => {
       this.pdfPopup.cancelHandler();
     })
-
+    this.customerService.openPdfpopup.subscribe(result => {
+      this.convertToPDF();
+    })
     this.customerService.emailClosed.subscribe(result => {
       this.emailPopup.cancelHandler();
     })

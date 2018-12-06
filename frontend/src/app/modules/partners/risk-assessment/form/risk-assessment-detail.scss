@@ -3,8 +3,10 @@ text-decoration: underline;
 font-weight: bol;
 }
 .bottom-align{
-    
-    }
+    position: absolute;
+    left: 100px;
+    margin-top: 8px;
+}
 .assessment-wrapper{
     border-right: 1px solid black;
 }
