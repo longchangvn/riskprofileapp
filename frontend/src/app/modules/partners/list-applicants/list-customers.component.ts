@@ -14,7 +14,7 @@ import { of } from 'rxjs/observable/of';
   styleUrls: ['./list-customers.component.scss']
 })
 export class CustomersListComponent extends PagedListingComponentBase<Customer> {
-  title = 'CUSTOMERS';
+  title = 'LIST OF APPLICANTS';
   currentSelectedCustomers: Customer;
   active = false;
   customers: Customer[];
