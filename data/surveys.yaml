@@ -6,22 +6,30 @@
 #
 
 Surveys:
+  Qualification:
+    MentalHealth: Risk associated with mental health
+    AccessingServices: Risk due to assessing services
+    Trauma: Risk due to trauma/torture
+    Violence: Risk of violence/aggression
+    Environment: Risk associated with environment
+    Substance: Drug and alcohol risks
+    LackOfValue: Risks due to lack of valued role
   PhysicalSafety:
-    PhysicalRisk1: "What is your level of XYZ?"
-    PhysicalRisk2: "What is your level of XYZ?"
-    PhysicalRisk3: "What is your level of XYZ?"
+    PhysicalRisk1: What is your level of XYZ?
+    PhysicalRisk2: What is your level of XYZ?
+    PhysicalRisk3: What is your level of XYZ?
   MedicalHistory:
-    MedicalRisk1: "What is your level of XYZ?"
-    MedicalRisk2: "What is your level of XYZ?"
-    MedicalRisk3: "What is your level of XYZ?"
+    MedicalRisk1: What is your level of XYZ?
+    MedicalRisk2: What is your level of XYZ?
+    MedicalRisk3: What is your level of XYZ?
   SubstanceUse:
-    SubstanceRisk1: "What is your level of XYZ?"
-    SubstanceRisk2: "What is your level of XYZ?"
-    SubstanceRisk3: "What is your level of XYZ?"
+    SubstanceRisk1: What is your level of XYZ?
+    SubstanceRisk2: What is your level of XYZ?
+    SubstanceRisk3: What is your level of XYZ?
   Other:
-    OtherRisk1: "What is your level of XYZ?"
-    OtherRisk2: "What is your level of XYZ?"
-    OtherRisk3: "What is your level of XYZ?"
+    OtherRisk1: What is your level of XYZ?
+    OtherRisk2: What is your level of XYZ?
+    OtherRisk3: What is your level of XYZ?
 
 
 Scales:
