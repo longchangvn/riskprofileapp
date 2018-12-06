@@ -1,6 +1,23 @@
+first_name: Sally
+last_name: Sallerson
 ndis_id: 984161
-name: Sally Sallerson
+last_updated: '2018-06-01 11:15'
 surveys:
+  Qualification:
+    MentalHealth:
+    - {Notes: None, Date: '2018-06-01', Scale: Low}
+    AccessingServices:
+    - {Notes: None, Date: '2018-06-01', Scale: Low}
+    Trauma:
+    - {Notes: None, Date: '2018-06-01', Scale: Low}
+    Violence:
+    - {Notes: None, Date: '2018-06-01', Scale: Low}
+    Environment:
+    - {Notes: None, Date: '2018-06-01', Scale: Low}
+    Substance:
+    - {Notes: None, Date: '2018-06-01', Scale: Low}
+    LackOfValue:
+    - {Notes: None, Date: '2018-06-01', Scale: Low}
   Other:
     OtherRisk1:
-      - {Comments: 'Customer insists on being referred to as Samantha.', Date: 2018-06-01, Level: Low'}
+      - {Notes: Customer prefers to be called Samantha., Date: '2018-06-01', Scale: Low}
