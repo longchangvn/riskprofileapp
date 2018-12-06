@@ -28,7 +28,7 @@ surveys:
     - {Date: '2018-12-05', Scale: Low}
   SubstanceUse:
     SubstanceRisk2:
-    - {Notes: 'Disoriented', Date: '2018-12-05', Scale: High}
+    - {Notes: 'Disoriented.', Date: '2018-12-05', Scale: High}
   Other:
     OtherRisk3:
       - {Date: '2018-12-01', Scale: High}

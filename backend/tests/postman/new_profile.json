@@ -1,7 +1,60 @@
 {
+  "first_name": "Job",
+  "last_name": "Bones",
   "ndis_id": {{new_ndis_id}},
-  "name": "Job Bones",
+  "last_updated": "{{timestamp}}",
   "surveys": {
+    "Qualification": {
+      "MentalHealth": [
+        {
+          "Notes": "None",
+          "Date": "2018-12-04",
+          "Scale": "Low"
+        }
+      ],
+      "AccessingServices": [
+        {
+          "Notes": "None",
+          "Date": "2018-12-04",
+          "Scale": "Low"
+        }
+      ],
+      "Trauma": [
+        {
+          "Notes": "None",
+          "Date": "2018-12-04",
+          "Scale": "Low"
+        }
+      ],
+      "Violence": [
+        {
+          "Notes": "None",
+          "Date": "2018-12-04",
+          "Scale": "Low"
+        }
+      ],
+      "Environment": [
+        {
+          "Notes": "None",
+          "Date": "2018-12-04",
+          "Scale": "Low"
+        }
+      ],
+      "Substance": [
+        {
+          "Notes": "None",
+          "Date": "2018-12-04",
+          "Scale": "Low"
+        }
+      ],
+      "LackOfValue": [
+        {
+          "Notes": "None",
+          "Date": "2018-12-04",
+          "Scale": "Low"
+        }
+      ]
+    },
     "MedicalHistory": {
       "MedicalRisk1": [
         {
