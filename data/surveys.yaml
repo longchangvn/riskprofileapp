@@ -1,68 +1,31 @@
 # This configuration defines the survey categories for risk profiling
 # 
 # Surveys
-#   Risks
-#     Responses
-#     Conditions
+#   SurveyName
+#     Questions
 #
 
+Surveys:
+  PhysicalSafety:
+    PhysicalRisk1: "What is your level of XYZ?"
+    PhysicalRisk2: "What is your level of XYZ?"
+    PhysicalRisk3: "What is your level of XYZ?"
+  MedicalHistory:
+    MedicalRisk1: "What is your level of XYZ?"
+    MedicalRisk2: "What is your level of XYZ?"
+    MedicalRisk3: "What is your level of XYZ?"
+  SubstanceUse:
+    SubstanceRisk1: "What is your level of XYZ?"
+    SubstanceRisk2: "What is your level of XYZ?"
+    SubstanceRisk3: "What is your level of XYZ?"
+  Other:
+    OtherRisk1: "What is your level of XYZ?"
+    OtherRisk2: "What is your level of XYZ?"
+    OtherRisk3: "What is your level of XYZ?"
 
-PhysicalSafety:
-  PhysicalRisk1:
-    - Low
-    - Med
-    - High
-  PhysicalRisk2:
-    - 1
-    - 2
-    - 3
-    - 4
-    - 5
-  PhysicalRisk3:
-    - Yes
-    - No
 
-MedicalHistory:
-  MedicalRisk1:
-    - Low
-    - Med
-    - High
-  MedicalRisk2:
-    - 1
-    - 2
-    - 3
-    - 4
-    - 5
-  MedicalRisk3:
-    - Yes
-    - No
-
-SubstanceUse:
-  SubstanceRisk1:
-    - Low
-    - Med
-    - High
-  SubstanceRisk2:
-    - 1
-    - 2
-    - 3
-    - 4
-    - 5
-  SubstanceRisk3:
-    - Yes
-    - No
-
-Other:
-  OtherRisk1:
-    - Low
-    - Med
-    - High
-  OtherRisk2:
-    - 1
-    - 2
-    - 3
-    - 4
-    - 5
-  OtherRisk3:
-    - Yes
-    - No
+Scales:
+  - NoRisk
+  - Low
+  - Med
+  - High

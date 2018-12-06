@@ -93,7 +93,8 @@ def read_survey_config():
     logger.info(f"Survey file: {survey_file}")
 
     with open(survey_file, 'r') as f:
-        return yaml.load(f)
+        y = yaml.load(f)
+        return y["Surveys"], y["Scales"]
 
 
 def get_local_profile_list():
@@ -101,8 +102,21 @@ def get_local_profile_list():
     file_filter = os.path.join(profile_dir, "*.yaml")
     profile_glob = glob.glob(file_filter)
     logger.debug(f"glob: {profile_glob}")
+    files = [os.path.splitext(os.path.basename(x))[0] for x in profile_glob]
+    response = []
+    for file in profile_glob:
+        with open(file, 'r') as f:
+            profile = yaml.load(f)
+            response.append(
+                {
+                    "first_name": profile["first_name"],
+                    "last_name": profile["last_name"],
+                    "last_updated": profile["last_updated"],
+                    "ndis_id": profile["ndis_id"],
+                })
+    return response
 
-    return [os.path.splitext(os.path.basename(x))[0] for x in profile_glob]
+
 
 
 def load_profile(ndis_id):
@@ -183,5 +197,5 @@ def dedupe_list_of_dicts(l):
 # init common stuff
 with app.app_context():
     WORKING_DIR = get_working_dir()
-    SURVEYS = read_survey_config()
+    SURVEYS, SCALES = read_survey_config()
     logger.info("READY: Webserver loaded.")

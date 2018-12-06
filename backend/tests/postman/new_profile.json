@@ -6,13 +6,13 @@
       "MedicalRisk1": [
         {
           "Date": "2018-07-01",
-          "Level": "High",
-          "Comments": "Severe influenza.\n"
+          "Scale": "High",
+          "Notes": "Severe influenza."
         },
         {
           "Date": "2018-08-05",
-          "Level": "Low",
-          "Comments": "Moderate cold.\n"
+          "Scale": "Low",
+          "Notes": "Moderate cold."
         }
       ]
     },
@@ -20,19 +20,19 @@
       "PhysicalRisk1": [
         {
           "Date": "2018-07-01",
-          "Level": "None",
-          "Comments": "N/A\n"
+          "Scale": "NoRisk",
+          "Notes": "N/A\n"
         },
         {
           "Date": "2018-08-05",
-          "Level": "Low",
-          "Comments": "House in disrepair\n"
+          "Scale": "Low",
+          "Notes": "House in disrepair"
         }
       ],
       "PhysicalRisk2": [
         {
           "Date": "2018-07-01",
-          "Level": 2
+          "Scale": "Low"
         }
       ]
     },
@@ -40,8 +40,8 @@
       "SubstanceRisk2": [
         {
           "Date": "2018-08-05",
-          "Level": 2,
-          "Comments": "Moderate alcohol consumption\n"
+          "Scale": "Low",
+          "Notes": "Moderate alcohol consumption"
         }
       ]
     }
