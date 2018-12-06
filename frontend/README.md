@@ -1,12 +1,22 @@
-# StepOne
+# Install Docker
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
+Install [Docker](https://docs.docker.com/)
+
+Copy provided docker file into root project
+
+Then run these 2 commands
+
+Run `docker build -t unboxd_riskeasy .`
+
+Run `docker run -p 5000:5000 unboxd_riskeasy`
+
+## Front end Development server
 
 Run `ng install` to set up npm
 
-## Development server
+Run `ng serve` for a dev server.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
