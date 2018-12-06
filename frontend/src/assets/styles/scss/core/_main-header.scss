@@ -12,7 +12,7 @@
 }
 
 .custom-navbar {
-  display: none;
+  //display: none;
   position: relative;
   z-index: 1000;
   padding-top: 0;
@@ -63,8 +63,8 @@
     @include vertical-align-padding($header-height, 2rem);
     margin: 0;
     .navbar-brand-logo {
-      height: 24px;
-      margin-right: 6px;
+      height: 36px;
+      margin-right: 0;
     }
   }
   .navbar-avatar {

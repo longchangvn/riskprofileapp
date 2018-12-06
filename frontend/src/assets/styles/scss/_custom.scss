@@ -3,7 +3,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -moz-font-feature-settings: "liga" on;
-
 }
 
 .home {
@@ -13,7 +12,7 @@ body {
 .document {
   font-family: Georgia, Times New Roman, serif;
   font-size: 17px;
-  color: rgba(0,0,0,.84);
+  color: rgba(0, 0, 0, .84);
   .card-header {
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 21px;
@@ -22,7 +21,7 @@ body {
   }
 }
 
-.app ng-sidebar > .sidebar-panel.ng-sidebar .menu .navigation-submenu .navigation-submenu a {
+.app ng-sidebar>.sidebar-panel.ng-sidebar .menu .navigation-submenu .navigation-submenu a {
   padding-left: 5.5rem;
 }
 
@@ -39,4 +38,12 @@ body {
 
 input.ng-invalid.ng-touched {
   border: 1px solid $red !important;
+}
+
+.theme-light {
+  background-color: #fff;
+}
+
+.assessment-wrapper {
+  margin-top: 25px;
 }
