@@ -61,7 +61,11 @@ def handle_profile(ndis_id):
         return jsonify(msg), 201
 
 
-# @app.route('/profiles/')
+@app.route('/profiles/<ndis_id>/sync', methods=['POST'])
+def sync_profile(ndis_id):
+    merge_profile(ndis_id)
+    msg = f"Profile for {ndis_id} synced"
+    return jsonify(msg)
 
 
 # Utilities
@@ -115,32 +119,56 @@ def save_profile(json_payload):
     logger.info(f"Saved profile successfully.")
 
 
-def merge_profile(json_payload):
-    ndis_id = json_payload['ndis_id']
-    logger.debug(f"Converting JSON to YAML")
-    recvd_yaml = yaml.dump(json_payload)
-    logger.debug(f"**** Received YAML ****:\n{recvd_yaml}")
-
+def merge_profile(ndis_id):
     filename = f"{ndis_id}.yaml"
-    filepath = os.path.join(WORKING_DIR, "profiles", filename)
-    if os.path.isfile(filepath):
-        logger.info("Merging into existing profile")
+    local_filepath = os.path.join(WORKING_DIR, "profiles", filename)
+    remote_filepath = os.path.join(WORKING_DIR, "remote", filename)
 
-        with open(filepath, 'r') as f:
-            existing_yaml = f.read()
-        logger.debug(f"**** Existing YAML ****:\n{existing_yaml}")
+    with open(local_filepath, 'r') as f:
+        local_yaml = f.read()
+    logger.debug(f"**** LOCAL YAML ****:\n{local_yaml}")
 
-        merged_obj = hiyapyco.load([existing_yaml, recvd_yaml],
+    if os.path.isfile(remote_filepath):
+        logger.info("Synchronising profiles")
+
+        with open(remote_filepath, 'r') as f:
+            remote_yaml = f.read()
+        logger.debug(f"**** REMOTE YAML ****:\n{remote_yaml}")
+
+        merged_hypc = hiyapyco.load([remote_yaml, local_yaml],
                                     method=hiyapyco.METHOD_MERGE,
                                     loglevel=logging.INFO,
                                     mergelists=False)
-        merged_yaml = hiyapyco.dump(merged_obj)
-        logger.debug(f"**** Merged YAML ****:\n{merged_yaml}")
+        merged_yaml = hiyapyco.dump(merged_hypc)
+        logger.debug(f"**** MERGED YAML ****:\n{merged_yaml}")
 
-        logger.debug(f"Overwriting profile at {filepath} for {ndis_id}")
-        with open(filepath, 'w') as f:
-            f.write(merged_yaml)
+        merged_dict = yaml.load(merged_yaml)
+        for survey, risks in merged_dict["surveys"].items():
+            logger.debug(f"Survey: {survey}")
+            logger.debug(f"Risks: {risks}")
+            for risk, observations in risks.items():
+                logger.debug(f"Risk: {risk}")
+                logger.debug(f"observations: {observations}")
+                deduped_observations = dedupe_list_of_dicts(observations)
+                logger.debug(f"Deduped observations: {deduped_observations}")
+                merged_dict["surveys"][survey][risk] = deduped_observations
 
+        logger.debug(f"Overwriting local and remote profiles for {ndis_id}")
+        with open(local_filepath, 'w') as f:
+            f.write(yaml.dump(merged_dict))
+        with open(remote_filepath, 'w') as f:
+            f.write(yaml.dump(merged_dict))
+
+
+def dedupe_list_of_dicts(l):
+    seen = set()
+    new_l = []
+    for d in l:
+        t = tuple(d.items())
+        if t not in seen:
+            seen.add(t)
+            new_l.append(d)
+    return new_l
 
 # init common stuff
 with app.app_context():

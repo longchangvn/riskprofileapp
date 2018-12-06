@@ -5,14 +5,14 @@ surveys:
     PhysicalRisk1:
     - {Comments: Customer lives in a bouncy castle, Date: '2018-12-04', Level: Low}
     - {Comments: 'Bouncy castle deflated.
-        Customer still on soft grass', Date: '2018-12-05', Level: Med}
+        Customer still on soft grass', Date: '2018-12-05', Level: High}
     PhysicalRisk2:
     - {Date: '2018-12-04', Level: 3}
-    - {Date: '2018-12-06', Level: 4}
+    - {Date: '2018-12-05', Level: 2}
   SubstanceUse:
     SubstanceRisk2:
     - {Comments: 'Disorientated. Lighter found on ground.
         Possibly the reason why bouncy castle was damaged and deflated', Date: '2018-12-05', Level: 4}
-  MedicalHistory:
-    MedicalRisk2:
-    - {Comments: Even worse influenza., Date: '2018-12-09', Level: High}
+  Other:
+    OtherRisk3:
+      - {Date: '2018-12-01', Level: True}

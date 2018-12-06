@@ -142,3 +142,26 @@ e.g. <http://127.0.0.1:5000/profiles/123456 PUT>
     }
 }
 ```
+
+
+
+### /profiles/<ndis_id>/sync POST
+Synchronises the local and remote files
+
+e.g. <http://127.0.0.1:5000/profiles/123456/sync POST>
+
+
+The two files will be merged together, which may result in duplicates.
+The results are then deduped, but with minimal logic.
+
+Please note the following cases and expected behaviour regarding risk observations
+
+* Entries that exist locally, will be copied remotely
+* Entries that exist remotely, will be copied locally
+* Entries for the same risk, with the same date, but different Levels or Comments will remain duplicated
+
+| Case | Local File | Remote File | Expected Output |
+|------|------------|-------------|-----------------|
+ Local change | Date: 2018-01-01, Level: Medium, Comments: blah | | Date: 2018-01-01, Level: Medium, Comments: blah
+ Remote change | | Date: 2018-03-20, Level: High, Comments: No comment | Date: 2018-03-20, Level: High, Comments: No comment
+ Conflicting dates | Date: 2018-05-17, Level: High, Comments: Important! | Date: 2018-05-19, Level: Low, Comments: Not important | Date: 2018-05-17, Level: High, Comments: Important!, Date: 2018-05-19, Level: Low, Comments: Not important
