@@ -10,6 +10,7 @@ import yaml
 import hiyapyco
 from pprint import pprint, pformat
 from flask import Flask, jsonify, request, abort, render_template
+from flask_cors import CORS
 
 
 
@@ -20,8 +21,9 @@ logging.basicConfig(level=logging.DEBUG,
 logger = logging.getLogger('riskeasy')
 
 
-# creating the Flask application
+# creating the Flask application w/ CORS enabled
 app = Flask(__name__)
+CORS(app)
 
 
 # Flask routes
@@ -183,6 +185,14 @@ def merge_profile(ndis_id):
         with open(remote_filepath, 'w') as f:
             f.write(yaml.dump(merged_dict))
 
+        # cleanup
+        del(merged_dict)
+        del(merged_hypc)
+        del(local_yaml)
+        del(remote_yaml)
+        del(merged_yaml)
+        logger.debug("deleted local, remote, merged dictionaries")
+
 
 def dedupe_list_of_dicts(l):
     seen = set()
@@ -193,6 +203,7 @@ def dedupe_list_of_dicts(l):
             seen.add(t)
             new_l.append(d)
     return new_l
+
 
 # init common stuff
 with app.app_context():
