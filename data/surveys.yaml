@@ -19,10 +19,8 @@ Surveys:
     TwoToOneSupport: Does the customer require 2:1 support?
     SpecialSupport: Does the customer require Special Support Coordination?
     SpecialBehaviour: Does the customer require Specialist Behavioural Support
-#      ScaleType: YesNo
   PhysicalSafety:
     PhysicalRisk1: What is your level of XYZ?
-#      ScaleType: HiMedLo
     PhysicalRisk2: What is your level of XYZ?
     PhysicalRisk3: What is your level of XYZ?
   MedicalHistory:
@@ -37,7 +35,6 @@ Surveys:
     OtherRisk1: What is your level of XYZ?
     OtherRisk2: What is your level of XYZ?
     OtherRisk3: What is your level of XYZ?
- #     ScaleType: OutOfTen
 
 
 Scales:
@@ -45,32 +42,3 @@ Scales:
   - Low
   - Med
   - High
-
-
-
-# ScaleTypes:
-#   <NameOfScaleType>:
-#     [List of key value pairs] Key = scale level name, value = normalised value (between 0 and 1)
-# 
-
-# ScaleTypes:
-#   HiMedLo:
-#     - NoRisk: 0.0
-#     - Low: 0.33
-#     - Med: 0.67
-#     - High: 1.0
-#   YesNo:
-#     - Yes: 1.0
-#     - No: 0.0
-#   OutOfTen:
-#     - 0: 0.0
-#     - 1: 0.1
-#     - 2: 0.2
-#     - 3: 0.3
-#     - 4: 0.4
-#     - 5: 0.5
-#     - 6: 0.6
-#     - 7: 0.7
-#     - 8: 0.8
-#     - 9: 0.9
-#     - 10: 1.0

@@ -1,0 +1,111 @@
+# This configuration defines the survey categories for risk profiling
+# 
+# Surveys
+#   SurveyName
+#     Questions
+#
+
+Surveys:
+  Qualification:
+    MentalHealth:
+      QuestionText: Risk associated with mental health
+      ScaleType: HiMedLo
+    AccessingServices:
+      QuestionText: Risk due to assessing services
+      ScaleType: HiMedLo
+    Trauma: 
+      QuestionText: Risk due to trauma/torture
+      ScaleType: HiMedLo
+    Violence: 
+      QuestionText: Risk of violence/aggression
+      ScaleType: HiMedLo
+    Environment: 
+      QuestionText: Risk associated with environment
+      ScaleType: HiMedLo
+    Substance: 
+      QuestionText: Drug and alcohol risks
+      ScaleType: HiMedLo
+    LackOfValue: Risks due to lack of valued role
+      QuestionText: 
+      ScaleType: HiMedLo
+  Proposed:
+    Cohort: 
+      QuestionText: Is the customer outside the typical customer cohort characteristics?
+      ScaleType: YesNo
+    TwoToOneSupport: 
+      QuestionText: Does the customer require 2:1 support?
+      ScaleType: YesNo
+    SpecialSupport: 
+      QuestionText: Does the customer require Special Support Coordination?
+      ScaleType: YesNo
+    SpecialBehaviour: 
+      QuestionText: Does the customer require Specialist Behavioural Support
+      ScaleType: YesNo
+  PhysicalSafety:
+    PhysicalRisk1: 
+      QuestionText: What is your level of XYZ? 
+      ScaleType: HiMedLo
+    PhysicalRisk2:
+      QuestionText: What is your level of XYZ?
+      ScaleType: HiMedLo
+    PhysicalRisk3:
+      QuestionText: What is your level of XYZ?
+      ScaleType: HiMedLo
+  MedicalHistory:
+    MedicalRisk1:
+      QuestionText: What is your level of XYZ?
+      ScaleType: HiMedLo
+    MedicalRisk2:
+      QuestionText: What is your level of XYZ?
+      ScaleType: HiMedLo
+    MedicalRisk3:
+      QuestionText: What is your level of XYZ?
+      ScaleType: HiMedLo
+  SubstanceUse:
+    SubstanceRisk1:
+      QuestionText: What is your level of XYZ?
+      ScaleType: HiMedLo
+    SubstanceRisk2:
+      QuestionText: What is your level of XYZ?
+      ScaleType: HiMedLo
+    SubstanceRisk3:
+      QuestionText: What is your level of XYZ?
+      ScaleType: HiMedLo
+  Other:
+    OtherRisk1:
+      QuestionText: What is your level of XYZ?
+      ScaleType: OutOfTen
+    OtherRisk2:
+      QuestionText: What is your level of XYZ?
+      ScaleType: OutOfTen
+    OtherRisk3:
+      QuestionText: What is your level of XYZ?
+      ScaleType: OutOfTen
+
+
+# ScaleTypes:
+#   <NameOfScaleType>:
+#     [List of key value pairs] Key = scale level name, value = normalised value (between 0 and 1)
+# 
+
+ScaleTypes:
+  HiMedLo:
+    - NoRisk: 0.0
+    - Low: 0.33
+    - Med: 0.67
+    - High: 1.0
+  YesNo:
+    - Yes: 1.0
+    - No: 0.0
+  OutOfTen:
+    - 0: 0.0
+    - 1: 0.1
+    - 2: 0.2
+    - 3: 0.3
+    - 4: 0.4
+    - 5: 0.5
+    - 6: 0.6
+    - 7: 0.7
+    - 8: 0.8
+    - 9: 0.9
+    - 10: 1.0
